@@ -1,0 +1,251 @@
+{
+    "resourceType": "RequestGroup",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "id": "3660",
+            "meta": {
+                "versionId": "1",
+                "lastUpdated": "2024-01-11T19:35:55.021+00:00",
+                "source": "#n87kLBHwndXk9XEw",
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/3540"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                            "code": "outpatient",
+                            "display": "Outpatient"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/3540",
+                "display": "amoxicilina 500 mg/ 5 mL polvo para preparado oral"
+            },
+            "subject": {
+                "reference": "Patient/3631"
+            },
+            "requester": {
+                "reference": "Practitioner/2152"
+            },
+            "groupIdentifier": {
+                "value": "mlYX2ZjzoE2"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "note": [
+                {
+                    "text": "Debe completar el tratamiento"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "Tomar 3.5 mililitros cada 8 horas durante 10 dias",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 10,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 8,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 3.5,
+                                "unit": "Mililitro",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-06",
+                    "end": "2024-03-06"
+                }
+            }
+        },
+        {
+            "resourceType": "MedicationRequest",
+            "id": "3669",
+            "meta": {
+                "versionId": "1",
+                "lastUpdated": "2024-01-11T19:37:46.235+00:00",
+                "source": "#IHpfY4SiMrRl7koR",
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/3542"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                            "code": "outpatient",
+                            "display": "Outpatient"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/3542",
+                "display": "ibuprofeno 100 mg/5 mL suspensión oral"
+            },
+            "subject": {
+                "reference": "Patient/3631"
+            },
+            "requester": {
+                "reference": "Practitioner/2152"
+            },
+            "groupIdentifier": {
+                "value": "mlYX2ZjzoE2"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "note": [
+                {
+                    "text": "En caso de fiebre"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "Tomar 5 mililitros cada 8 horas durante 5 dias",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 5,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 8,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 5,
+                                "unit": "Mililitro",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-06",
+                    "end": "2024-03-06"
+                }
+            }
+        }
+    ],
+    "basedOn": [
+        {
+            "reference": "#3660"
+        },
+        {
+            "reference": "#3669"
+        }
+    ],
+    "groupIdentifier": {
+        "value": "mlYX2ZjzoE2"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/3631"
+    },
+    "authoredOn": "2024-01-11T15:17:12.314Z"
+}
