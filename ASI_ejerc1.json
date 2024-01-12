@@ -1,13 +1,13 @@
 {
     "resourceType": "RequestGroup",
     "groupIdentifier": {
-        "value": "1b2eg350539c9520e91l"
+        "value": "p2rpsq8oonmesu93t101"
     },
     "status": "active",
     "intent": "order",
     "subject": {
-        "display": "Juan,Andrés Gonzalez Gonzalez",
-        "reference": "https://hapi.fhir.org/baseR4/Patient/11126027"
+        "display": "NICOLAS SOTO DURAN",
+        "reference": "{{RECETA_BASE_URL}}/v2/Patient/2309028611"
     },
     "authoredOn": "2024-01-11T20:22:49.103Z",
     "contained": [
@@ -16,19 +16,20 @@
             "status": "active",
             "intent": "order",
             "subject": {
-                "reference": "https://hapi.fhir.org/baseR4/Patient/11126027",
-                "display": "Juan,Andrés Gonzalez Gonzalez"
+                "display": "NICOLAS SOTO DURAN",
+                "reference": "{{RECETA_BASE_URL}}/v2/Patient/2309028611"
             },
+            "authoredOn": "2024-01-11T20:22:49.103Z",
             "medicationReference": {
-                "reference": "https://hapi.fhir.org/baseR4/Medication/1661131000167114",
+                "reference": "{{RECETA_BASE_URL}}/medications/1661131000167114",
                 "display": "amoxicilina 1000 mg comprimido"
             },
             "requester": {
-                "reference": "https://hapi.fhir.org/baseR4/Practitioner/2504890",
-                "display": "VILMA ESTER NAVARRETE NAVARRETE"
+                "display": "Maria Carmen De los angeles Del rio Gonzalez",
+                "reference": "{{RECETA_BASE_URL}}/v2/Practitioner/41253126252"
             },
             "groupIdentifier": {
-                "value": "1b2eg350539c9520e91l"
+                "value": "p2rpsq8oonmesu93t101"
             },
             "dosageInstruction": [
                 {
@@ -36,12 +37,12 @@
                     "sequence": 1,
                     "timing": {
                         "repeat": {
-                            "period": "12",
+                            "period": 12,
                             "frequency": "1",
                             "periodUnit": "h",
                             "boundsDuration": {
                                 "code": "d",
-                                "value": "10",
+                                "value": 10,
                                 "system": "http://unitsofmeasure.org"
                             }
                         }
@@ -107,7 +108,7 @@
                     "url": "http://recetaelectronica.minsal.cl/gi-fhir/StructureDefinition/Prod-Comercial",
                     "valueReference": {
                         "display": "amoval 1 g comprimido dispersable (Saval)",
-                        "reference": "https://hapi.fhir.org/baseR4/Medication/1931051000167112"
+                        "reference": "{{RECETA_BASE_URL}}/medications/1931051000167112"
                     }
                 }
             ],

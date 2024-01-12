@@ -1,133 +1,147 @@
 {
-  "resourceType" : "RequestGroup",  
-  "id": "SSMAULE-Receta-01",
-  "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Ejercicio 1 Connectathon</b></p></div>"
-  },  
-  "basedOn" : [
-	{
-	  "resourceType": "MedicationRequest",
-	  "id": "SSMAULE-MedicationRequest-01",
-	  "text": {
+	"resourceType": "RequestGroup",
+	"id": "SSMAULE-Receta-01",
+	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b> receta 1 connectathon</p></div>"
-	  },
-	  "extension" : [
-		  {
-				"url" : "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
-				"valueString" : "Sildenafil"
-		  }  
-	  ],  
-	  "identifier": [
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Ejercicio 1 Connectathon</b></p></div>"
+	},
+	"contained": [
 		{
-		  "type": {
-			"coding": [
-			  {
-				"system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/ValueSet/VSTipoPrescripcion",
-				"code": "Id_Local",
-				"display": "Id_Local"
-			  }
-			]
-		  },		
-		  "system": "http://www.sismaule.ssmaule.cl",
-		  "value": "44552",
-		  "assigner": {
-			"reference": "https://hapi.fhir.org/baseR4/Organization/36097238",
-			"display": "Hospital Dr. César Garavagno Burotto"
-		  }	  
-		}
-	  ],
-	  "status": "active",
-	  "intent": "order",
-	  "category" : [
-		{
-		  "coding" : [
-			{
-			  "system" : "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
-			  "code" : "outpatient",
-			  "display" : "Ambulatorio"
+			"resourceType": "MedicationRequest",
+			"id": "SSMAULE-MedicationRequest-01",
+			"text": {
+				"status": "generated",
+				"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b> receta 1 connectathon</p></div>"
+			},
+			"extension": [
+				{
+					"url": "http://recetaelectronica.minsal.cl/gi-fhir/StructureDefinition/Prod-Comercial",
+					"valueReference": {
+						"display": "viagra 100 mg comprimido recubierto (Pfizer)",
+						"reference": "{{RECETA_BASE_URL}}/medications/1976541000167112"
+					}
+				}
+			],
+			"groupIdentifier": {
+				"value": "p2rpsq8oonmesu93t106"
+			},
+			"identifier": [
+				{
+					"type": {
+						"coding": [
+							{
+								"system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/ValueSet/VSTipoPrescripcion",
+								"code": "Id_Local",
+								"display": "Id_Local"
+							}
+						]
+					},
+					"system": "http://www.sismaule.ssmaule.cl",
+					"value": "44552",
+					"assigner": {
+						"reference": "https://hapi.fhir.org/baseR4/Organization/36097238",
+						"display": "Hospital Dr. César Garavagno Burotto"
+					}
+				}
+			],
+			"status": "active",
+			"intent": "order",
+			"category": [
+				{
+					"coding": [
+						{
+							"system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+							"code": "community",
+							"display": "Comunitario"
+						}
+					]
+				}
+			],
+			"medicationReference": {
+				"reference": "{{RECETA_BASE_URL}}/medications/1669211000167110",
+				"display": "sildenafil 50 mg comprimido"
+			},
+			"subject": {
+				"display": "DAVID JOSE MONTERO COLINA",
+				"reference": "https://apidev-receta.minsal.cl/v2/patient/3256098112"
+			},
+			"authoredOn": "2024-01-11T15:17:12.314Z",
+			"requester": {
+				"display": "Maria Carmen De los angeles Del rio Gonzalez",
+				"reference": "{{RECETA_BASE_URL}}/v2/Practitioner/41253126252"
+			},
+			"note": [
+				{
+					"text": "consumirlo cada vez que lo necesite"
+				}
+			],
+			"dosageInstruction": [
+				{
+					"sequence": 1,
+					"text": "tomar una vez al día, de manera oral y tragarla, durante 3 meses",
+					"timing": {
+						"repeat": {
+							"boundsDuration": {
+                                "code": "mo",
+                                "value": 3,
+                                "system": "http://unitsofmeasure.org"
+                            },
+							"frequency": 1,
+							"period": 12,
+							"periodUnit": "h"
+						}
+					},
+					"route": {
+						"coding": [
+							{
+								"system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+								"code": "26643006",
+								"display": "vía Oral route (calificador)"
+							}
+						]
+					},
+					"method": {
+                        "coding": [
+                            {
+                                "code": "738995006",
+                                "system": "http://snomed.info/sct",
+                                "display": "Tragar"
+                            }
+                        ]
+                    },
+					"doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "code": "comprimido",
+                                "unit": "comprimido",
+                                "value": 1,
+                                "system": "http://recetaelectronica.minsal.cl/gi-fhir/CodeSystem/CSUnidadAsistencial"
+                            }
+                        }
+                    ]
+				}
+			],
+			"dispenseRequest": {
+				"validityPeriod": {
+					"start": "2024-01-06",
+					"end": "2024-03-06"
+				},
+				"performer": {
+					"reference": "https://fhir.cens.cl/baseR4/Organization/587",
+					"display": "Farmacia Cruz Verde Quillota"
+				}
 			}
-		  ]
 		}
-	  ],	  
-	  "contained": [
-		{
-		  "resourceType": "Medication",
-		  "id": "44552-1",
-		  "code": {
-			"coding": [
-			  {
-				"system": "http://snomed.info/sct",
-				"code": "372572000",
-				"display": "sildenafilo"
-			  }
-			]
-		  }
-		}
-	  ],  
-	  "medicationReference": {
-		"reference": "1669211000167110"
-	  },
-	  "subject" : {
-		"reference" : "https://fhir.cens.cl/baseR4/Patient/588"
-	  },
-	  "authoredOn": "2024-01-06",
-	  "requester" : {
-		"reference" : "https://fhir.cens.cl/baseR4/Practitioner/582"
-	  },
-	  "note":"consumirlo cada vez que lo necesite",
-	  "dosageInstruction": [
-		{
-		  "sequence": 1,
-		  "text": "tomar una vez al día, de manera oral y tragarla, durante 3 meses",
-		  "timing": {
-			"repeat": {
-			  "boundsPeriod": {
-				"start": "2024-01-06",
-				"end": "2024-03-06"
-			  },
-			  "frequency" : 1,
-			  "period" : 12,
-			  "periodUnit" : "h"
-			}
-		  },
-		  "route": {
-			"coding": [
-			  {
-				"system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
-				"code": "26643006",
-				"display": "vía Oral route (calificador)"
-			  }
-			]
-		  }
-		}
-	  ],
-	  "dispenseRequest": {
-		"validityPeriod": {
-		  "start": "2024-01-06",
-		  "end": "2024-03-06"
-		},
-		"performer": {
-		  "reference": "https://fhir.cens.cl/baseR4/Organization/587",
-		  "display": "Farmacia Cruz Verde Quillota"
-		}	
-	  }
-	}
-  ],
-  "groupIdentifier" : {		
-    "identifier" : [{
-		"use": "official",
-		"system": "http://www.sismaule.ssmaule.cl",
-		"value": "44552"												
-    }]
-  }, 
-  "status" : "active",
-  "intent" : "order",
-  "priority" : "routine",
-  "subject": {
-    "reference" : "https://fhir.cens.cl/baseR4/Patient/588",
-    "display": " David Montero"
-  },
-  "authoredOn": "2024-01-06"
+	],
+	"groupIdentifier": {
+		"value": "p2rpsq8oonmesu93t106"
+	},
+	"status": "active",
+	"intent": "order",
+	"priority": "routine",
+	"subject": {
+		"display": "DAVID JOSE MONTERO COLINA",
+		"reference": "https://apidev-receta.minsal.cl/v2/patient/3256098112"
+	},
+	"authoredOn": "2024-01-11T15:17:12.314Z"
 }
