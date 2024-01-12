@@ -1,0 +1,121 @@
+{
+    "resourceType": "RequestGroup",
+    "groupIdentifier": {
+        "value": "1b2eg350539c9520e91l"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "display": "Juan,Andrés Gonzalez Gonzalez",
+        "reference": "https://hapi.fhir.org/baseR4/Patient/11126027"
+    },
+    "authoredOn": "2024-01-11T20:22:49.103Z",
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "status": "active",
+            "intent": "order",
+            "subject": {
+                "reference": "https://hapi.fhir.org/baseR4/Patient/11126027",
+                "display": "Juan,Andrés Gonzalez Gonzalez"
+            },
+            "medicationReference": {
+                "reference": "https://hapi.fhir.org/baseR4/Medication/1661131000167114",
+                "display": "amoxicilina 1000 mg comprimido"
+            },
+            "requester": {
+                "reference": "https://hapi.fhir.org/baseR4/Practitioner/2504890",
+                "display": "VILMA ESTER NAVARRETE NAVARRETE"
+            },
+            "groupIdentifier": {
+                "value": "1b2eg350539c9520e91l"
+            },
+            "dosageInstruction": [
+                {
+                    "text": "Administrar 1 Comprimido cada 12 horas por 10 días",
+                    "sequence": 1,
+                    "timing": {
+                        "repeat": {
+                            "period": "12",
+                            "frequency": "1",
+                            "periodUnit": "h",
+                            "boundsDuration": {
+                                "code": "d",
+                                "value": "10",
+                                "system": "http://unitsofmeasure.org"
+                            }
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "26643006",
+                                "display": "oral"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "738995006",
+                                "display": "vía oral para tragar"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 1,
+                                "unit": "comprimido",
+                                "code": "comprimido",
+                                "system": "http://recetaelectronica.minsal.cl/gi-fhir/CodeSystem/CSUnidadAsistencial"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-11",
+                    "end": "2024-01-20"
+                }
+            },
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/R4/codesystem-medicationrequest-category.html",
+                            "code": "community",
+                            "display": "Comunitario"
+                        }
+                    ]
+                }
+            ],
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "http://recetaelectronica.minsal.cl/gi-fhir/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "extension": [
+                {
+                    "url": "http://recetaelectronica.minsal.cl/gi-fhir/StructureDefinition/Prod-Comercial",
+                    "valueReference": {
+                        "display": "amoval 1 g comprimido dispersable (Saval)",
+                        "reference": "https://hapi.fhir.org/baseR4/Medication/1931051000167112"
+                    }
+                }
+            ],
+            "note": [
+                {
+                    "text": "Diluir en vaso de agua"
+                }
+            ]
+        }
+    ]
+}

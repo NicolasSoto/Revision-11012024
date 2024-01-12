@@ -1,0 +1,20 @@
+{
+    "resourceType" : "RequestGroup",
+    "meta" : {
+      "profile" : ["https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"]
+    },
+    "groupIdentifier" : {
+      "value" : "NanoId"
+    },
+    "status" : "active",
+    "intent" : "order",
+    "subject" : {
+      "reference" : "https://hapi.onfhir.cl/fhir/Patient/13579"
+      
+    },
+    "medicationReference" : {
+        "reference" : "https://hapi.onfhir.cl/fhir/Medication/3386",
+        "display" : "Sildenafil 50 mg comprimido"
+      },
+    "authoredOn" : "2024-01-08T15:02:12.314Z"
+  }

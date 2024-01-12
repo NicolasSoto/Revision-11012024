@@ -1,0 +1,107 @@
+{
+    "resourceType" : "Patient",
+    "id" : "13579",
+    "meta" : {
+      "profile" : ["https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl"]
+    },
+    "identifier" : [{
+      "use" : "official",
+      "type" : {
+        "extension" : [{
+          "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais",
+              "code" : "152",
+              "display" : "Chile"
+            }]
+          }
+        }],
+        "coding" : [{
+          "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI",
+          "code" : "NNCHL",
+          "display" : "Chile"
+        }]
+      },
+      "system" : "http://regcivil.cl/Validacion/RUN",
+      "value" : "25534964-3"
+    }],
+    "active" : true,
+    "name" : [{
+      "use" : "official",
+      "family" : "Montero",
+      "_family" : {
+        "extension" : [{
+          "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SegundoApellido",
+          "valueString" : "Colina"
+        }]
+      },
+      "given" : ["David",
+      "Jose",
+      "SSMO"]
+    },
+    {
+      "use" : "usual",
+      "given" : ["DavidSSMO"]
+    }],
+    "telecom" : [{
+      "system" : "phone",
+      "value" : "943561833",
+      "use" : "mobile"
+    }
+  ],
+    "gender" : "male",
+    "birthDate" : "1989-12-20",
+    "address" : [{
+      "use" : "home",
+      "line" : ["Valle del Paraiso 3434"],
+      "_city" : {
+        "extension" : [{
+          "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL",
+              "code" : "13301",
+              "display" : "Colina"
+            }]
+          }
+        }]
+      },
+      "_district" : {
+        "extension" : [{
+          "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL",
+              "code" : "133",
+              "display" : "Chacabuco"
+            }]
+          }
+        }]
+      },
+      "_state" : {
+        "extension" : [{
+          "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL",
+              "code" : "13",
+              "display" : "Metropolitana de Santiago"
+            }]
+          }
+        }]
+      },
+      "_country" : {
+        "extension" : [{
+          "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais",
+              "code" : "152",
+              "display" : "Chile"
+            }]
+          }
+        }]
+      }
+    }]
+  }

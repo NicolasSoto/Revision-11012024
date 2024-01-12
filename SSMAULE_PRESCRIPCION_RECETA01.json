@@ -1,0 +1,133 @@
+{
+  "resourceType" : "RequestGroup",  
+  "id": "SSMAULE-Receta-01",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Ejercicio 1 Connectathon</b></p></div>"
+  },  
+  "basedOn" : [
+	{
+	  "resourceType": "MedicationRequest",
+	  "id": "SSMAULE-MedicationRequest-01",
+	  "text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b> receta 1 connectathon</p></div>"
+	  },
+	  "extension" : [
+		  {
+				"url" : "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+				"valueString" : "Sildenafil"
+		  }  
+	  ],  
+	  "identifier": [
+		{
+		  "type": {
+			"coding": [
+			  {
+				"system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/ValueSet/VSTipoPrescripcion",
+				"code": "Id_Local",
+				"display": "Id_Local"
+			  }
+			]
+		  },		
+		  "system": "http://www.sismaule.ssmaule.cl",
+		  "value": "44552",
+		  "assigner": {
+			"reference": "https://hapi.fhir.org/baseR4/Organization/36097238",
+			"display": "Hospital Dr. César Garavagno Burotto"
+		  }	  
+		}
+	  ],
+	  "status": "active",
+	  "intent": "order",
+	  "category" : [
+		{
+		  "coding" : [
+			{
+			  "system" : "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+			  "code" : "outpatient",
+			  "display" : "Ambulatorio"
+			}
+		  ]
+		}
+	  ],	  
+	  "contained": [
+		{
+		  "resourceType": "Medication",
+		  "id": "44552-1",
+		  "code": {
+			"coding": [
+			  {
+				"system": "http://snomed.info/sct",
+				"code": "372572000",
+				"display": "sildenafilo"
+			  }
+			]
+		  }
+		}
+	  ],  
+	  "medicationReference": {
+		"reference": "1669211000167110"
+	  },
+	  "subject" : {
+		"reference" : "https://fhir.cens.cl/baseR4/Patient/588"
+	  },
+	  "authoredOn": "2024-01-06",
+	  "requester" : {
+		"reference" : "https://fhir.cens.cl/baseR4/Practitioner/582"
+	  },
+	  "note":"consumirlo cada vez que lo necesite",
+	  "dosageInstruction": [
+		{
+		  "sequence": 1,
+		  "text": "tomar una vez al día, de manera oral y tragarla, durante 3 meses",
+		  "timing": {
+			"repeat": {
+			  "boundsPeriod": {
+				"start": "2024-01-06",
+				"end": "2024-03-06"
+			  },
+			  "frequency" : 1,
+			  "period" : 12,
+			  "periodUnit" : "h"
+			}
+		  },
+		  "route": {
+			"coding": [
+			  {
+				"system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+				"code": "26643006",
+				"display": "vía Oral route (calificador)"
+			  }
+			]
+		  }
+		}
+	  ],
+	  "dispenseRequest": {
+		"validityPeriod": {
+		  "start": "2024-01-06",
+		  "end": "2024-03-06"
+		},
+		"performer": {
+		  "reference": "https://fhir.cens.cl/baseR4/Organization/587",
+		  "display": "Farmacia Cruz Verde Quillota"
+		}	
+	  }
+	}
+  ],
+  "groupIdentifier" : {		
+    "identifier" : [{
+		"use": "official",
+		"system": "http://www.sismaule.ssmaule.cl",
+		"value": "44552"												
+    }]
+  }, 
+  "status" : "active",
+  "intent" : "order",
+  "priority" : "routine",
+  "subject": {
+    "reference" : "https://fhir.cens.cl/baseR4/Patient/588",
+    "display": " David Montero"
+  },
+  "authoredOn": "2024-01-06"
+}

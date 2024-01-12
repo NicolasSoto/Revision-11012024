@@ -1,0 +1,1309 @@
+{
+	"info": {
+		"_postman_id": "960ef8ca-e77a-482f-a39f-2dd101493751",
+		"name": "Connectathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11741761",
+		"_collection_link": "https://buhochile.postman.co/workspace/Buho-Core~e485e0a5-ede5-445f-b673-9642d17673b8/collection/24775767-960ef8ca-e77a-482f-a39f-2dd101493751?action=share&source=collection_link&creator=11741761"
+	},
+	"item": [
+		{
+			"name": "Prescripcion",
+			"item": [
+				{
+					"name": "Create Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"active\": true,\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl\"\r\n        ]\r\n    },\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"332\",\r\n                                    \"display\": \"Haiti\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PPN\",\r\n                        \"display\": \"Passport number\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://Pasaportes.cl/Validacion/Pass\",\r\n            \"value\": \"111223123HT\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\", // usual | official | temp | nickname | anonymous | old | maiden\r\n            \"text\": \"Juana Josefina Prat Montes\", // Text representation of the full name\r\n            \"family\": \"Prat Montes\", // Family name (often called 'Surname')\r\n            \"given\": [\r\n                \"Juana\",\r\n                \"Josefina\",\r\n                \"Búho Chile\"\r\n            ] // Given names (not always 'first'). Includes middle names\r\n        }\r\n    ], // A name associated with the patient\r\n    // \"telecom\" : [{ ContactPoint }], // A contact detail for the individual\r\n    \"gender\": \"female\", // male | female | other | unknown\r\n    \"birthDate\": \"1993-07-11\", // The date of birth for the individual\r\n    // deceased[x]: Indicates if the individual is deceased or not. One of these 2:\r\n    \"deceasedBoolean\": false,\r\n    //\"deceasedDateTime\" : \"<dateTime>\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"type\": \"both\",\r\n            \"text\": \"Esmeralda 325, La Florida, Santiago, Región Metropolitana\",\r\n            \"line\": [\r\n                \"Esmeralda 325\"\r\n            ],\r\n            \"_city\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL\",\r\n                                    \"code\": \"13110\",\r\n                                    \"display\": \"La Florida\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_district\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL\",\r\n                                    \"code\": \"131\",\r\n                                    \"display\": \"Santiago\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_state\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL\",\r\n                                    \"code\": \"13\",\r\n                                    \"display\": \"Región Metropolitana\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_country\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"152\",\r\n                                    \"display\": \"Chile\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ], // An address for the individual\r\n    \"maritalStatus\": \"UNK\", // Marital (civil) status of a patient\r\n    // multipleBirth[x]: Whether patient is part of a multiple birth. One of these 2:\r\n    \"multipleBirthBoolean\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-url}}/Patient",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"Patient"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1.1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"152\",\r\n                                    \"display\": \"Chile\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI\",\r\n                        \"code\": \"NNCHL\",\r\n                        \"display\": \"Chile\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://regcivil.cl/Validacion/RUN\",\r\n            \"value\": \"25.534.964-3\"\r\n        }\r\n    ],\r\n    \"active\": true,\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl\"\r\n        ]\r\n    },\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\", // usual | official | temp | nickname | anonymous | old | maiden\r\n            \"text\": \"David Jose Montero Colina\", // Text representation of the full name\r\n            \"family\": \"Montero Colina\", // Family name (often called 'Surname')\r\n            \"given\": [\r\n                \"David\",\r\n                \"Jose\",\r\n                \"Búho Chile\"\r\n            ] // Given names (not always 'first'). Includes middle names\r\n        }\r\n    ], // A name associated with the patient\r\n    // \"telecom\" : [{ ContactPoint }], // A contact detail for the individual\r\n    \"gender\": \"male\", // male | female | other | unknown\r\n    \"birthDate\": \"1990-12-20\", // The date of birth for the individual\r\n    // deceased[x]: Indicates if the individual is deceased or not. One of these 2:\r\n    \"deceasedBoolean\": false,\r\n    //\"deceasedDateTime\" : \"<dateTime>\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"type\": \"both\",\r\n            \"text\": \"Valle del Paraíso 3434, Colina, Chacabuco, Santiago\",\r\n            \"line\": [\r\n                \"Valle del Paraíso 3434\"\r\n            ],\r\n            \"_city\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL\",\r\n                                    \"code\": \"13301\",\r\n                                    \"display\": \"Colina\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_district\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL\",\r\n                                    \"code\": \"133\",\r\n                                    \"display\": \"Chacabuco\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_state\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL\",\r\n                                    \"code\": \"13\",\r\n                                    \"display\": \"Santiago\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_country\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"152\",\r\n                                    \"display\": \"Chile\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ], // An address for the individual\r\n    \"maritalStatus\": \"UNK\", // Marital (civil) status of a patient\r\n    // multipleBirth[x]: Whether patient is part of a multiple birth. One of these 2:\r\n    \"multipleBirthBoolean\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/Patient",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"Patient"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:20:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "dB0uv5FqlDcPyfAV"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/Patient/3575/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:20:18 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/Patient/3575/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "83"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "3"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=v89LVOYt93vrrNwND52V84HsF7PCA7Y9rINauBqlbMNz3RsPtnEinQHCrQaJzny1Ss2NzH%2FyIjk7ZC1YPzmmGkosuVAUqQkd6UgfmvgZ6chjNR6DJDXIRZr7FeexkGCZvQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843f842dcf966f2b-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"Patient\",\n    \"id\": \"3575\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:20:18.934+00:00\",\n        \"source\": \"#dB0uv5FqlDcPyfAV\",\n        \"profile\": [\n            \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"type\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\n                                    \"code\": \"152\",\n                                    \"display\": \"Chile\"\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"coding\": [\n                    {\n                        \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI\",\n                        \"code\": \"NNCHL\",\n                        \"display\": \"Chile\"\n                    }\n                ]\n            },\n            \"system\": \"http://regcivil.cl/Validacion/RUN\",\n            \"value\": \"25.534.964-3\"\n        }\n    ],\n    \"active\": true,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"text\": \"David Jose Montero Colina\",\n            \"family\": \"Montero Colina\",\n            \"given\": [\n                \"David\",\n                \"Jose\",\n                \"Búho Chile\"\n            ]\n        }\n    ],\n    \"gender\": \"male\",\n    \"birthDate\": \"1990-12-20\",\n    \"deceasedBoolean\": false,\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"type\": \"both\",\n            \"text\": \"Valle del Paraíso 3434, Colina, Chacabuco, Santiago\",\n            \"line\": [\n                \"Valle del Paraíso 3434\"\n            ],\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL\",\n                                    \"code\": \"13301\",\n                                    \"display\": \"Colina\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_district\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL\",\n                                    \"code\": \"133\",\n                                    \"display\": \"Chacabuco\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL\",\n                                    \"code\": \"13\",\n                                    \"display\": \"Santiago\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_country\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\n                                    \"code\": \"152\",\n                                    \"display\": \"Chile\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            }\n        }\n    ],\n    \"multipleBirthBoolean\": false\n}"
+						},
+						{
+							"name": "2.1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"active\": true,\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl\"\r\n        ]\r\n    },\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"222\",\r\n                                    \"display\": \"El Salvador\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PPN\",\r\n                        \"display\": \"Passport number\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://Pasaportes.cl/Validacion/Pass\",\r\n            \"value\": \"P3334521.2\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\", // usual | official | temp | nickname | anonymous | old | maiden\r\n            \"text\": \"Pedro Soto del Valle\", // Text representation of the full name\r\n            \"family\": \"Soto del Valle\", // Family name (often called 'Surname')\r\n            \"given\": [\r\n                \"Pedro\",\r\n                \"Búho Chile\"\r\n            ] // Given names (not always 'first'). Includes middle names\r\n        }\r\n    ], // A name associated with the patient\r\n    // \"telecom\" : [{ ContactPoint }], // A contact detail for the individual\r\n    \"gender\": \"male\", // male | female | other | unknown\r\n    \"birthDate\": \"2015-09-07\", // The date of birth for the individual\r\n    // deceased[x]: Indicates if the individual is deceased or not. One of these 2:\r\n    \"deceasedBoolean\": false,\r\n    //\"deceasedDateTime\" : \"<dateTime>\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"type\": \"both\",\r\n            \"text\": \"Carmen 562, Lo Espejo, Santiago, Región Metropolitana\",\r\n            \"line\": [\r\n                \"Carmen 562\"\r\n            ],\r\n            \"_city\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL\",\r\n                                    \"code\": \"13116\",\r\n                                    \"display\": \"Lo Espejo\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_district\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL\",\r\n                                    \"code\": \"131\",\r\n                                    \"display\": \"Santiago\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_state\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL\",\r\n                                    \"code\": \"13\",\r\n                                    \"display\": \"Región Metropolitana\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_country\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"152\",\r\n                                    \"display\": \"Chile\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ], // An address for the individual\r\n    \"maritalStatus\": \"UNK\", // Marital (civil) status of a patient\r\n    // multipleBirth[x]: Whether patient is part of a multiple birth. One of these 2:\r\n    \"multipleBirthBoolean\": false,\r\n    \"contact\": [\r\n        {\r\n            \"extension\": [\r\n                {\r\n                    \"extension\": [\r\n                        {\r\n                            \"url\": \"tutId\",\r\n                            \"valueIdentifier\": {\r\n                                \"type\": {\r\n                                    \"coding\": [\r\n                                        {\r\n                                            \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI\",\r\n                                            \"code\": \"NNCHL\",\r\n                                            \"display\": \"Chile\"\r\n                                        }\r\n                                    ]\r\n                                },\r\n                                \"system\": \"http://regcivil.cl/Validacion/RUN\",\r\n                                \"value\": \"14234876-4\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"url\": \"docProc\",\r\n                            \"valueCodeableConcept\": {\r\n                                \"coding\": [\r\n                                    {\r\n                                        \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                        \"code\": \"152\",\r\n                                        \"display\": \"Chile\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ],\r\n                    \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/IdContacto\"\r\n                }\r\n            ],\r\n            \"relationship\": [\r\n                {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0131\",\r\n                            \"code\": \"N\",\r\n                            \"display\": \"Next-of-Kin\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"name\": {\r\n                \"use\": \"official\",\r\n                \"family\": \"Soto\",\r\n                \"_family\": {\r\n                    \"extension\": [\r\n                        {\r\n                            \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SegundoApellido\",\r\n                            \"valueString\": \"Duran\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"given\": [\r\n                    \"Nicolas\"\r\n                ]\r\n            }\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/Patient",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"Patient"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:26:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "f6ttSmlXgoNJamW0"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/Patient/3631/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:26:04 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/Patient/3631/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "68"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=a6xVUp9DYSMS1CEZ%2FUBShB%2FckGuQ6KFdMqabR%2B%2F8FrKkYljT9v4tJJF3KJUDksphK8l5YEU9kG629r5zSp%2BNs7uvW8deEnWUmLnKll95H4Os9qI6nvyZzvf4VGJT%2FNGFfA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843f8c9b39796f2b-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"Patient\",\n    \"id\": \"3631\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:26:04.233+00:00\",\n        \"source\": \"#f6ttSmlXgoNJamW0\",\n        \"profile\": [\n            \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"type\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\n                                    \"code\": \"222\",\n                                    \"display\": \"El Salvador\"\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PPN\",\n                        \"display\": \"Passport number\"\n                    }\n                ]\n            },\n            \"system\": \"http://Pasaportes.cl/Validacion/Pass\",\n            \"value\": \"P3334521.2\"\n        }\n    ],\n    \"active\": true,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"text\": \"Pedro Soto del Valle\",\n            \"family\": \"Soto del Valle\",\n            \"given\": [\n                \"Pedro\",\n                \"Búho Chile\"\n            ]\n        }\n    ],\n    \"gender\": \"male\",\n    \"birthDate\": \"2015-09-07\",\n    \"deceasedBoolean\": false,\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"type\": \"both\",\n            \"text\": \"Carmen 562, Lo Espejo, Santiago, Región Metropolitana\",\n            \"line\": [\n                \"Carmen 562\"\n            ],\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL\",\n                                    \"code\": \"13116\",\n                                    \"display\": \"Lo Espejo\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_district\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL\",\n                                    \"code\": \"131\",\n                                    \"display\": \"Santiago\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL\",\n                                    \"code\": \"13\",\n                                    \"display\": \"Región Metropolitana\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_country\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\n                                    \"code\": \"152\",\n                                    \"display\": \"Chile\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            }\n        }\n    ],\n    \"multipleBirthBoolean\": false,\n    \"contact\": [\n        {\n            \"extension\": [\n                {\n                    \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/IdContacto\",\n                    \"extension\": [\n                        {\n                            \"url\": \"tutId\",\n                            \"valueIdentifier\": {\n                                \"type\": {\n                                    \"coding\": [\n                                        {\n                                            \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI\",\n                                            \"code\": \"NNCHL\",\n                                            \"display\": \"Chile\"\n                                        }\n                                    ]\n                                },\n                                \"system\": \"http://regcivil.cl/Validacion/RUN\",\n                                \"value\": \"14234876-4\"\n                            }\n                        },\n                        {\n                            \"url\": \"docProc\",\n                            \"valueCodeableConcept\": {\n                                \"coding\": [\n                                    {\n                                        \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\n                                        \"code\": \"152\",\n                                        \"display\": \"Chile\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            ],\n            \"relationship\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0131\",\n                            \"code\": \"N\",\n                            \"display\": \"Next-of-Kin\"\n                        }\n                    ]\n                }\n            ],\n            \"name\": {\n                \"use\": \"official\",\n                \"family\": \"Soto\",\n                \"_family\": {\n                    \"extension\": [\n                        {\n                            \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SegundoApellido\",\n                            \"valueString\": \"Duran\"\n                        }\n                    ]\n                },\n                \"given\": [\n                    \"Nicolas\"\n                ]\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "3.1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"active\": true,\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl\"\r\n        ]\r\n    },\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"332\",\r\n                                    \"display\": \"Haiti\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PPN\",\r\n                        \"display\": \"Passport number\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://Pasaportes.cl/Validacion/Pass\",\r\n            \"value\": \"111223123HT\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\", // usual | official | temp | nickname | anonymous | old | maiden\r\n            \"text\": \"Juana Josefina Prat Montes\", // Text representation of the full name\r\n            \"family\": \"Prat Montes\", // Family name (often called 'Surname')\r\n            \"given\": [\r\n                \"Juana\",\r\n                \"Josefina\",\r\n                \"Búho Chile\"\r\n            ] // Given names (not always 'first'). Includes middle names\r\n        }\r\n    ], // A name associated with the patient\r\n    // \"telecom\" : [{ ContactPoint }], // A contact detail for the individual\r\n    \"gender\": \"female\", // male | female | other | unknown\r\n    \"birthDate\": \"1993-07-11\", // The date of birth for the individual\r\n    // deceased[x]: Indicates if the individual is deceased or not. One of these 2:\r\n    \"deceasedBoolean\": false,\r\n    //\"deceasedDateTime\" : \"<dateTime>\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"type\": \"both\",\r\n            \"text\": \"Esmeralda 325, La Florida, Santiago, Región Metropolitana\",\r\n            \"line\": [\r\n                \"Esmeralda 325\"\r\n            ],\r\n            \"_city\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL\",\r\n                                    \"code\": \"13110\",\r\n                                    \"display\": \"La Florida\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_district\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL\",\r\n                                    \"code\": \"131\",\r\n                                    \"display\": \"Santiago\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_state\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL\",\r\n                                    \"code\": \"13\",\r\n                                    \"display\": \"Región Metropolitana\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"_country\": {\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\r\n                        \"valueCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\r\n                                    \"code\": \"152\",\r\n                                    \"display\": \"Chile\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ], // An address for the individual\r\n    \"maritalStatus\": \"UNK\", // Marital (civil) status of a patient\r\n    // multipleBirth[x]: Whether patient is part of a multiple birth. One of these 2:\r\n    \"multipleBirthBoolean\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/Patient",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"Patient"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:49:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "l8cSksCeiCiz6YR3"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/Patient/3746/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:49:16 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/Patient/3746/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "66"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "2"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=zLbjqzJAad1wTHcTpK4wecA8c1nUCZeiEv15xMPg26bxpqVfDwNfXhfgKcekKEnTqsMVZ%2BXnjt6YM2po68ukHTyPpP%2Fu7D8hZF3TL1QiEZ93e%2BCex2xRSQXiJmU4fB9eGQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843fae98da9cd776-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"Patient\",\n    \"id\": \"3746\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:49:16.369+00:00\",\n        \"source\": \"#l8cSksCeiCiz6YR3\",\n        \"profile\": [\n            \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"type\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\n                                    \"code\": \"332\",\n                                    \"display\": \"Haiti\"\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"coding\": [\n                    {\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                        \"code\": \"PPN\",\n                        \"display\": \"Passport number\"\n                    }\n                ]\n            },\n            \"system\": \"http://Pasaportes.cl/Validacion/Pass\",\n            \"value\": \"111223123HT\"\n        }\n    ],\n    \"active\": true,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"text\": \"Juana Josefina Prat Montes\",\n            \"family\": \"Prat Montes\",\n            \"given\": [\n                \"Juana\",\n                \"Josefina\",\n                \"Búho Chile\"\n            ]\n        }\n    ],\n    \"gender\": \"female\",\n    \"birthDate\": \"1993-07-11\",\n    \"deceasedBoolean\": false,\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"type\": \"both\",\n            \"text\": \"Esmeralda 325, La Florida, Santiago, Región Metropolitana\",\n            \"line\": [\n                \"Esmeralda 325\"\n            ],\n            \"_city\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL\",\n                                    \"code\": \"13110\",\n                                    \"display\": \"La Florida\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_district\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL\",\n                                    \"code\": \"131\",\n                                    \"display\": \"Santiago\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_state\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL\",\n                                    \"code\": \"13\",\n                                    \"display\": \"Región Metropolitana\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"_country\": {\n                \"extension\": [\n                    {\n                        \"url\": \"https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises\",\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais\",\n                                    \"code\": \"152\",\n                                    \"display\": \"Chile\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            }\n        }\n    ],\n    \"multipleBirthBoolean\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Medication Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceType\": \"MedicationRequest\",\r\n    //\"id\" : \"Ejemplo1-prescipcion\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n        ]\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n            \"valueReference\": {\r\n                \"reference\": \"Medication/3543\"\r\n            }\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion\",\r\n                        \"code\": \"Id_Cheque\",\r\n                        \"display\": \"Id_Cheque\"\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                    \"code\": \"outpatient\",\r\n                    \"display\": \"Outpatient\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"medicationReference\": {\r\n        \"reference\": \"Medication/3543\",\r\n        \"display\": \"Fentermina 37,5 mg comprimido\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3746\"\r\n    },\r\n    \"requester\": {\r\n        \"reference\": \"Practitioner/{{prescriptor-id}}\"\r\n    },\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE3\"\r\n    },\r\n    \"courseOfTherapyType\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                \"code\": \"acute\",\r\n                \"display\": \"Terapia a corto plazo (aguda)\"\r\n            }\r\n        ]\r\n    },\r\n    \"note\": [\r\n        {\r\n            \"text\": \"Administrar todos los días en ayuno\"\r\n        }\r\n    ],\r\n    \"dosageInstruction\": [\r\n        {\r\n            \"sequence\": 1,\r\n            \"text\": \"Tomar 1 comprimido al dia durante 3 meses\",\r\n            \"timing\": {\r\n                \"repeat\": {\r\n                    \"boundsDuration\": {\r\n                        \"value\": 3,\r\n                        \"system\": \"http://unitsofmeasure.org\",\r\n                        \"code\": \"m\"\r\n                    },\r\n                    \"frequency\": 1,\r\n                    \"period\": 1,\r\n                    \"periodUnit\": \"d\"\r\n                }\r\n            },\r\n            \"route\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                        \"code\": \"26643006\",\r\n                        \"display\": \"vía Oral route (calificador)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"method\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                        \"code\": \"738995006\",\r\n                        \"display\": \"Tragar (método de administración)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"doseAndRate\": [\r\n                {\r\n                    \"doseQuantity\": {\r\n                        \"value\": 1,\r\n                        \"unit\": \"Comprimido\",\r\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                        \"code\": \"comprimido\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"dispenseRequest\": {\r\n        \"validityPeriod\": {\r\n            \"start\": \"2024-01-06\",\r\n            \"end\": \"2024-03-06\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-url}}/MedicationRequest",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"MedicationRequest"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"MedicationRequest\",\r\n    //\"id\" : \"Ejemplo1-prescipcion\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n        ]\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n            \"valueReference\": {\r\n                \"reference\": \"Medication/3408\"\r\n            }\r\n        }\r\n    ],\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                    \"code\": \"outpatient\",\r\n                    \"display\": \"Outpatient\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"medicationReference\": {\r\n        \"reference\": \"Medication/3408\", //\"Medication/1669211000167110\",\r\n        \"display\": \"Sildenafil 50 mg comprimido\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/{{client1-id}}\"\r\n    },\r\n    \"requester\": {\r\n        \"reference\": \"Practitioner/{{prescriptor-id}}\"\r\n    },\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE1\"\r\n    },\r\n    \"courseOfTherapyType\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                \"code\": \"acute\",\r\n                \"display\": \"Terapia a corto plazo (aguda)\"\r\n            }\r\n        ]\r\n    },\r\n    \"note\": [\r\n        {\r\n            \"text\": \"Consumirlo cada vez que lo necesite\"\r\n        }\r\n    ],\r\n    \"dosageInstruction\": [\r\n        {\r\n            \"sequence\": 1,\r\n            \"text\": \"Tomar 1 comprimido una vez al día, de manera oral y tragarla, durante 3 meses\",\r\n            \"timing\": {\r\n                \"repeat\": {\r\n                    \"boundsDuration\": {\r\n                        \"value\": 3,\r\n                        \"system\": \"http://unitsofmeasure.org\",\r\n                        \"code\": \"m\"\r\n                    },\r\n                    \"frequency\": 1,\r\n                    \"period\": 1,\r\n                    \"periodUnit\": \"d\"\r\n                }\r\n            },\r\n            \"route\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                        \"code\": \"26643006\",\r\n                        \"display\": \"vía Oral route (calificador)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"method\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                        \"code\": \"738995006\",\r\n                        \"display\": \"Tragar (método de administración)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"doseAndRate\": [\r\n                {\r\n                    \"doseQuantity\": {\r\n                        \"value\": 1,\r\n                        \"unit\": \"Comprimido\",\r\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                        \"code\": \"comprimido\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"dispenseRequest\": {\r\n        \"validityPeriod\": {\r\n            \"start\": \"2024-01-06\",\r\n            \"end\": \"2024-03-06\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/MedicationRequest",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"MedicationRequest"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 18:43:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "WAzTGGrqRR3XROEl"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3447/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 18:43:29 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3447/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "37"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "2"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=q5wQus28AS%2BMFT5szE74zs74yrRC6ABQh6y6d1FrHcmvu4Vn7XQT7MNxm90UsmMh9wkCNZWmCIetlmYccguKqDPItN9LTYR4kzmZrw%2F6gv%2FugX7se0exz%2FoMr5LMtm6neg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843f4e39c8987527-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"MedicationRequest\",\n    \"id\": \"3447\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T18:43:29.006+00:00\",\n        \"source\": \"#WAzTGGrqRR3XROEl\",\n        \"profile\": [\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n        ]\n    },\n    \"extension\": [\n        {\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n            \"valueReference\": {\n                \"reference\": \"Medication/3408\"\n            }\n        }\n    ],\n    \"status\": \"active\",\n    \"intent\": \"order\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                    \"code\": \"outpatient\",\n                    \"display\": \"Outpatient\"\n                }\n            ]\n        }\n    ],\n    \"medicationReference\": {\n        \"reference\": \"Medication/3408\",\n        \"display\": \"Sildenafil 50 mg comprimido\"\n    },\n    \"subject\": {\n        \"reference\": \"Patient/3243\"\n    },\n    \"requester\": {\n        \"reference\": \"Practitioner/2152\"\n    },\n    \"groupIdentifier\": {\n        \"value\": \"mlYX2ZjzoE1\"\n    },\n    \"courseOfTherapyType\": {\n        \"coding\": [\n            {\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                \"code\": \"acute\",\n                \"display\": \"Terapia a corto plazo (aguda)\"\n            }\n        ]\n    },\n    \"note\": [\n        {\n            \"text\": \"Consumirlo cada vez que lo necesite\"\n        }\n    ],\n    \"dosageInstruction\": [\n        {\n            \"sequence\": 1,\n            \"text\": \"Tomar 1 comprimido una vez al día, de manera oral y tragarla, durante 3 meses\",\n            \"timing\": {\n                \"repeat\": {\n                    \"boundsDuration\": {\n                        \"value\": 3,\n                        \"system\": \"http://unitsofmeasure.org\",\n                        \"code\": \"m\"\n                    },\n                    \"frequency\": 1,\n                    \"period\": 1,\n                    \"periodUnit\": \"d\"\n                }\n            },\n            \"route\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                        \"code\": \"26643006\",\n                        \"display\": \"vía Oral route (calificador)\"\n                    }\n                ]\n            },\n            \"method\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                        \"code\": \"738995006\",\n                        \"display\": \"Tragar (método de administración)\"\n                    }\n                ]\n            },\n            \"doseAndRate\": [\n                {\n                    \"doseQuantity\": {\n                        \"value\": 1,\n                        \"unit\": \"Comprimido\",\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                        \"code\": \"comprimido\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"dispenseRequest\": {\n        \"validityPeriod\": {\n            \"start\": \"2024-01-06\",\n            \"end\": \"2024-03-06\"\n        }\n    }\n}"
+						},
+						{
+							"name": "2.2 (a)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"MedicationRequest\",\r\n    //\"id\" : \"Ejemplo1-prescipcion\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n        ]\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n            \"valueReference\": {\r\n                \"reference\": \"Medication/3540\"\r\n            }\r\n        }\r\n    ],\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                    \"code\": \"outpatient\",\r\n                    \"display\": \"Outpatient\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"medicationReference\": {\r\n        \"reference\": \"Medication/3540\",\r\n        \"display\": \"amoxicilina 500 mg/ 5 mL polvo para preparado oral\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3631\"\r\n    },\r\n    \"requester\": {\r\n        \"reference\": \"Practitioner/{{prescriptor-id}}\"\r\n    },\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE2\"\r\n    },\r\n    \"courseOfTherapyType\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                \"code\": \"acute\",\r\n                \"display\": \"Terapia a corto plazo (aguda)\"\r\n            }\r\n        ]\r\n    },\r\n    \"note\": [\r\n        {\r\n            \"text\": \"Debe completar el tratamiento\"\r\n        }\r\n    ],\r\n    \"dosageInstruction\": [\r\n        {\r\n            \"sequence\": 1,\r\n            \"text\": \"Tomar 3.5 mililitros cada 8 horas durante 10 dias\",\r\n            \"timing\": {\r\n                \"repeat\": {\r\n                    \"boundsDuration\": {\r\n                        \"value\": 10,\r\n                        \"system\": \"http://unitsofmeasure.org\",\r\n                        \"code\": \"d\"\r\n                    },\r\n                    \"frequency\": 1,\r\n                    \"period\": 8,\r\n                    \"periodUnit\": \"h\"\r\n                }\r\n            },\r\n            \"route\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                        \"code\": \"26643006\",\r\n                        \"display\": \"vía Oral route (calificador)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"method\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                        \"code\": \"738995006\",\r\n                        \"display\": \"Tragar (método de administración)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"doseAndRate\": [\r\n                {\r\n                    \"doseQuantity\": {\r\n                        \"value\": 3.5,\r\n                        \"unit\": \"Mililitro\",\r\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                        \"code\": \"mililitro\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"dispenseRequest\": {\r\n        \"validityPeriod\": {\r\n            \"start\": \"2024-01-06\",\r\n            \"end\": \"2024-03-06\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/MedicationRequest",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"MedicationRequest"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:35:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "n87kLBHwndXk9XEw"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3660/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:35:55 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3660/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "34"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "2"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=TTgCOiRoUAhgajY1%2Fox41CIo9FfxZl1md1Wdr7IiRvxFKogIojFG5odvN24L9C4DxQy%2FZXX2rn1bVQc5zowW7ASqyTaP%2Fps4xpsomNdtNptuFqRzCYIIPB9EK0qHw41Wwg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843f9b0848cc6f2b-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"MedicationRequest\",\n    \"id\": \"3660\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:35:55.021+00:00\",\n        \"source\": \"#n87kLBHwndXk9XEw\",\n        \"profile\": [\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n        ]\n    },\n    \"extension\": [\n        {\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n            \"valueReference\": {\n                \"reference\": \"Medication/3540\"\n            }\n        }\n    ],\n    \"status\": \"active\",\n    \"intent\": \"order\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                    \"code\": \"outpatient\",\n                    \"display\": \"Outpatient\"\n                }\n            ]\n        }\n    ],\n    \"medicationReference\": {\n        \"reference\": \"Medication/3540\",\n        \"display\": \"amoxicilina 500 mg/ 5 mL polvo para preparado oral\"\n    },\n    \"subject\": {\n        \"reference\": \"Patient/3631\"\n    },\n    \"requester\": {\n        \"reference\": \"Practitioner/2152\"\n    },\n    \"groupIdentifier\": {\n        \"value\": \"mlYX2ZjzoE2\"\n    },\n    \"courseOfTherapyType\": {\n        \"coding\": [\n            {\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                \"code\": \"acute\",\n                \"display\": \"Terapia a corto plazo (aguda)\"\n            }\n        ]\n    },\n    \"note\": [\n        {\n            \"text\": \"Debe completar el tratamiento\"\n        }\n    ],\n    \"dosageInstruction\": [\n        {\n            \"sequence\": 1,\n            \"text\": \"Tomar 3.5 mililitros cada 8 horas durante 10 dias\",\n            \"timing\": {\n                \"repeat\": {\n                    \"boundsDuration\": {\n                        \"value\": 10,\n                        \"system\": \"http://unitsofmeasure.org\",\n                        \"code\": \"d\"\n                    },\n                    \"frequency\": 1,\n                    \"period\": 8,\n                    \"periodUnit\": \"h\"\n                }\n            },\n            \"route\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                        \"code\": \"26643006\",\n                        \"display\": \"vía Oral route (calificador)\"\n                    }\n                ]\n            },\n            \"method\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                        \"code\": \"738995006\",\n                        \"display\": \"Tragar (método de administración)\"\n                    }\n                ]\n            },\n            \"doseAndRate\": [\n                {\n                    \"doseQuantity\": {\n                        \"value\": 3.5,\n                        \"unit\": \"Mililitro\",\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                        \"code\": \"mililitro\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"dispenseRequest\": {\n        \"validityPeriod\": {\n            \"start\": \"2024-01-06\",\n            \"end\": \"2024-03-06\"\n        }\n    }\n}"
+						},
+						{
+							"name": "2.2 (b)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"MedicationRequest\",\r\n    //\"id\" : \"Ejemplo1-prescipcion\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n        ]\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n            \"valueReference\": {\r\n                \"reference\": \"Medication/3542\"\r\n            }\r\n        }\r\n    ],\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                    \"code\": \"outpatient\",\r\n                    \"display\": \"Outpatient\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"medicationReference\": {\r\n        \"reference\": \"Medication/3542\",\r\n        \"display\": \"ibuprofeno 100 mg/5 mL suspensión oral\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3631\"\r\n    },\r\n    \"requester\": {\r\n        \"reference\": \"Practitioner/{{prescriptor-id}}\"\r\n    },\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE2\"\r\n    },\r\n    \"courseOfTherapyType\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                \"code\": \"acute\",\r\n                \"display\": \"Terapia a corto plazo (aguda)\"\r\n            }\r\n        ]\r\n    },\r\n    \"note\": [\r\n        {\r\n            \"text\": \"En caso de fiebre\"\r\n        }\r\n    ],\r\n    \"dosageInstruction\": [\r\n        {\r\n            \"sequence\": 1,\r\n            \"text\": \"Tomar 5 mililitros cada 8 horas durante 5 dias\",\r\n            \"timing\": {\r\n                \"repeat\": {\r\n                    \"boundsDuration\": {\r\n                        \"value\": 5,\r\n                        \"system\": \"http://unitsofmeasure.org\",\r\n                        \"code\": \"d\"\r\n                    },\r\n                    \"frequency\": 1,\r\n                    \"period\": 8,\r\n                    \"periodUnit\": \"h\"\r\n                }\r\n            },\r\n            \"route\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                        \"code\": \"26643006\",\r\n                        \"display\": \"vía Oral route (calificador)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"method\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                        \"code\": \"738995006\",\r\n                        \"display\": \"Tragar (método de administración)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"doseAndRate\": [\r\n                {\r\n                    \"doseQuantity\": {\r\n                        \"value\": 5,\r\n                        \"unit\": \"Mililitro\",\r\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                        \"code\": \"mililitro\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"dispenseRequest\": {\r\n        \"validityPeriod\": {\r\n            \"start\": \"2024-01-06\",\r\n            \"end\": \"2024-03-06\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/MedicationRequest",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"MedicationRequest"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:37:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "IHpfY4SiMrRl7koR"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3669/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:37:46 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3669/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "50"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "2"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=M2KOYA7TW7aeq%2BGGRvOay8oLo5H6VKLEXgzWHdBu7LWPnk0CUk7yzpxyXr15BkbaAkFXw24PFq9d%2BMyQfm9NjDVzsPeZbLDMe0AKrPVYT%2BqjImAJP7bX1BZhe9VYk1FFFQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843f9dbf78306f2b-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"MedicationRequest\",\n    \"id\": \"3669\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:37:46.235+00:00\",\n        \"source\": \"#IHpfY4SiMrRl7koR\",\n        \"profile\": [\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n        ]\n    },\n    \"extension\": [\n        {\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n            \"valueReference\": {\n                \"reference\": \"Medication/3542\"\n            }\n        }\n    ],\n    \"status\": \"active\",\n    \"intent\": \"order\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                    \"code\": \"outpatient\",\n                    \"display\": \"Outpatient\"\n                }\n            ]\n        }\n    ],\n    \"medicationReference\": {\n        \"reference\": \"Medication/3542\",\n        \"display\": \"ibuprofeno 100 mg/5 mL suspensión oral\"\n    },\n    \"subject\": {\n        \"reference\": \"Patient/3631\"\n    },\n    \"requester\": {\n        \"reference\": \"Practitioner/2152\"\n    },\n    \"groupIdentifier\": {\n        \"value\": \"mlYX2ZjzoE2\"\n    },\n    \"courseOfTherapyType\": {\n        \"coding\": [\n            {\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                \"code\": \"acute\",\n                \"display\": \"Terapia a corto plazo (aguda)\"\n            }\n        ]\n    },\n    \"note\": [\n        {\n            \"text\": \"En caso de fiebre\"\n        }\n    ],\n    \"dosageInstruction\": [\n        {\n            \"sequence\": 1,\n            \"text\": \"Tomar 5 mililitros cada 8 horas durante 5 dias\",\n            \"timing\": {\n                \"repeat\": {\n                    \"boundsDuration\": {\n                        \"value\": 5,\n                        \"system\": \"http://unitsofmeasure.org\",\n                        \"code\": \"d\"\n                    },\n                    \"frequency\": 1,\n                    \"period\": 8,\n                    \"periodUnit\": \"h\"\n                }\n            },\n            \"route\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                        \"code\": \"26643006\",\n                        \"display\": \"vía Oral route (calificador)\"\n                    }\n                ]\n            },\n            \"method\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                        \"code\": \"738995006\",\n                        \"display\": \"Tragar (método de administración)\"\n                    }\n                ]\n            },\n            \"doseAndRate\": [\n                {\n                    \"doseQuantity\": {\n                        \"value\": 5,\n                        \"unit\": \"Mililitro\",\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                        \"code\": \"mililitro\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"dispenseRequest\": {\n        \"validityPeriod\": {\n            \"start\": \"2024-01-06\",\n            \"end\": \"2024-03-06\"\n        }\n    }\n}"
+						},
+						{
+							"name": "3.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"MedicationRequest\",\r\n    //\"id\" : \"Ejemplo1-prescipcion\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n        ]\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n            \"valueReference\": {\r\n                \"reference\": \"Medication/3543\"\r\n            }\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion\",\r\n                        \"code\": \"Id_Cheque\",\r\n                        \"display\": \"Id_Cheque\"\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                    \"code\": \"outpatient\",\r\n                    \"display\": \"Outpatient\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"medicationReference\": {\r\n        \"reference\": \"Medication/3543\",\r\n        \"display\": \"Fentermina 37,5 mg comprimido\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3746\"\r\n    },\r\n    \"requester\": {\r\n        \"reference\": \"Practitioner/{{prescriptor-id}}\"\r\n    },\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE3\"\r\n    },\r\n    \"courseOfTherapyType\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                \"code\": \"acute\",\r\n                \"display\": \"Terapia a corto plazo (aguda)\"\r\n            }\r\n        ]\r\n    },\r\n    \"note\": [\r\n        {\r\n            \"text\": \"Administrar todos los días en ayuno\"\r\n        }\r\n    ],\r\n    \"dosageInstruction\": [\r\n        {\r\n            \"sequence\": 1,\r\n            \"text\": \"Tomar 1 comprimido al dia durante 3 meses\",\r\n            \"timing\": {\r\n                \"repeat\": {\r\n                    \"boundsDuration\": {\r\n                        \"value\": 3,\r\n                        \"system\": \"http://unitsofmeasure.org\",\r\n                        \"code\": \"m\"\r\n                    },\r\n                    \"frequency\": 1,\r\n                    \"period\": 1,\r\n                    \"periodUnit\": \"d\"\r\n                }\r\n            },\r\n            \"route\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                        \"code\": \"26643006\",\r\n                        \"display\": \"vía Oral route (calificador)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"method\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                        \"code\": \"738995006\",\r\n                        \"display\": \"Tragar (método de administración)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"doseAndRate\": [\r\n                {\r\n                    \"doseQuantity\": {\r\n                        \"value\": 1,\r\n                        \"unit\": \"Comprimido\",\r\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                        \"code\": \"comprimido\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"dispenseRequest\": {\r\n        \"validityPeriod\": {\r\n            \"start\": \"2024-01-06\",\r\n            \"end\": \"2024-03-06\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/MedicationRequest",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"MedicationRequest"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:58:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "VXGbL04h2Vu8DW1r"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3798/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:58:15 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/MedicationRequest/3798/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "61"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=N7ks%2BOaoQmBNcBku%2Fu8JDAfmfVNa58PisyaJ0ymJLjy0jPdYsrju8tBjAf7efHbRQaGXhpVldeHW%2Bw905M%2BryhnKdjbBZSDIDtJag%2BDPGhwjX%2F15izXNFRYvLdiZb85lkA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843fbbc109a96f2f-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"MedicationRequest\",\n    \"id\": \"3798\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:58:15.278+00:00\",\n        \"source\": \"#VXGbL04h2Vu8DW1r\",\n        \"profile\": [\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n        ]\n    },\n    \"extension\": [\n        {\n            \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n            \"valueReference\": {\n                \"reference\": \"Medication/3543\"\n            }\n        }\n    ],\n    \"identifier\": [\n        {\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion\",\n                        \"code\": \"Id_Cheque\",\n                        \"display\": \"Id_Cheque\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"status\": \"active\",\n    \"intent\": \"order\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                    \"code\": \"outpatient\",\n                    \"display\": \"Outpatient\"\n                }\n            ]\n        }\n    ],\n    \"medicationReference\": {\n        \"reference\": \"Medication/3543\",\n        \"display\": \"Fentermina 37,5 mg comprimido\"\n    },\n    \"subject\": {\n        \"reference\": \"Patient/3746\"\n    },\n    \"requester\": {\n        \"reference\": \"Practitioner/2152\"\n    },\n    \"groupIdentifier\": {\n        \"value\": \"mlYX2ZjzoE3\"\n    },\n    \"courseOfTherapyType\": {\n        \"coding\": [\n            {\n                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                \"code\": \"acute\",\n                \"display\": \"Terapia a corto plazo (aguda)\"\n            }\n        ]\n    },\n    \"note\": [\n        {\n            \"text\": \"Administrar todos los días en ayuno\"\n        }\n    ],\n    \"dosageInstruction\": [\n        {\n            \"sequence\": 1,\n            \"text\": \"Tomar 1 comprimido al dia durante 3 meses\",\n            \"timing\": {\n                \"repeat\": {\n                    \"boundsDuration\": {\n                        \"value\": 3,\n                        \"system\": \"http://unitsofmeasure.org\",\n                        \"code\": \"m\"\n                    },\n                    \"frequency\": 1,\n                    \"period\": 1,\n                    \"periodUnit\": \"d\"\n                }\n            },\n            \"route\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                        \"code\": \"26643006\",\n                        \"display\": \"vía Oral route (calificador)\"\n                    }\n                ]\n            },\n            \"method\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                        \"code\": \"738995006\",\n                        \"display\": \"Tragar (método de administración)\"\n                    }\n                ]\n            },\n            \"doseAndRate\": [\n                {\n                    \"doseQuantity\": {\n                        \"value\": 1,\n                        \"unit\": \"Comprimido\",\n                        \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                        \"code\": \"comprimido\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"dispenseRequest\": {\n        \"validityPeriod\": {\n            \"start\": \"2024-01-06\",\n            \"end\": \"2024-03-06\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "RequestGroup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceType\": \"RequestGroup\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl\"\r\n        ]\r\n    },\r\n    \"contained\": [\r\n        {\r\n            \"resourceType\": \"MedicationRequest\",\r\n            \"id\": \"3798\",\r\n            \"meta\": {\r\n                \"versionId\": \"1\",\r\n                \"lastUpdated\": \"2024-01-11T19:58:15.278+00:00\",\r\n                \"source\": \"#VXGbL04h2Vu8DW1r\",\r\n                \"profile\": [\r\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n                ]\r\n            },\r\n            \"extension\": [\r\n                {\r\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n                    \"valueReference\": {\r\n                        \"reference\": \"Medication/3543\"\r\n                    }\r\n                }\r\n            ],\r\n            \"identifier\": [\r\n                {\r\n                    \"type\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion\",\r\n                                \"code\": \"Id_Cheque\",\r\n                                \"display\": \"Id_Cheque\"\r\n                            }\r\n                        ]\r\n                    }\r\n                }\r\n            ],\r\n            \"status\": \"active\",\r\n            \"intent\": \"order\",\r\n            \"category\": [\r\n                {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                            \"code\": \"outpatient\",\r\n                            \"display\": \"Outpatient\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"medicationReference\": {\r\n                \"reference\": \"Medication/3543\",\r\n                \"display\": \"Fentermina 37,5 mg comprimido\"\r\n            },\r\n            \"subject\": {\r\n                \"reference\": \"Patient/3746\"\r\n            },\r\n            \"requester\": {\r\n                \"reference\": \"Practitioner/2152\"\r\n            },\r\n            \"groupIdentifier\": {\r\n                \"value\": \"mlYX2ZjzoE3\"\r\n            },\r\n            \"courseOfTherapyType\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                        \"code\": \"acute\",\r\n                        \"display\": \"Terapia a corto plazo (aguda)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"note\": [\r\n                {\r\n                    \"text\": \"Administrar todos los días en ayuno\"\r\n                }\r\n            ],\r\n            \"dosageInstruction\": [\r\n                {\r\n                    \"sequence\": 1,\r\n                    \"text\": \"Tomar 1 comprimido al dia durante 3 meses\",\r\n                    \"timing\": {\r\n                        \"repeat\": {\r\n                            \"boundsDuration\": {\r\n                                \"value\": 3,\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"m\"\r\n                            },\r\n                            \"frequency\": 1,\r\n                            \"period\": 1,\r\n                            \"periodUnit\": \"d\"\r\n                        }\r\n                    },\r\n                    \"route\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                                \"code\": \"26643006\",\r\n                                \"display\": \"vía Oral route (calificador)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"method\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                                \"code\": \"738995006\",\r\n                                \"display\": \"Tragar (método de administración)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"doseAndRate\": [\r\n                        {\r\n                            \"doseQuantity\": {\r\n                                \"value\": 1,\r\n                                \"unit\": \"Comprimido\",\r\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                                \"code\": \"comprimido\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"dispenseRequest\": {\r\n                \"validityPeriod\": {\r\n                    \"start\": \"2024-01-06\",\r\n                    \"end\": \"2024-03-06\"\r\n                }\r\n            }\r\n        }\r\n    ],\r\n    \"basedOn\": [\r\n        {\r\n            \"reference\": \"#3798\"\r\n        }\r\n    ],\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE3\"\r\n    },\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3746\"\r\n    },\r\n    \"authoredOn\": \"2024-01-11T15:17:12.314Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-url}}/RequestGroup",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"RequestGroup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1.3 / 1.4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"RequestGroup\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl\"\r\n        ]\r\n    },\r\n    \"contained\": [\r\n        {\r\n            \"resourceType\": \"MedicationRequest\",\r\n            \"id\": \"3447\",\r\n            \"meta\": {\r\n                \"versionId\": \"1\",\r\n                \"lastUpdated\": \"2024-01-11T18:08:54.958+00:00\",\r\n                \"source\": \"#sICOmBgAcJcc9kj2\",\r\n                \"profile\": [\r\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n                ]\r\n            },\r\n            \"extension\": [\r\n                {\r\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n                    \"valueReference\": {\r\n                        \"reference\": \"Medication/3338\"\r\n                    }\r\n                }\r\n            ],\r\n            \"status\": \"active\",\r\n            \"intent\": \"order\",\r\n            \"category\": [\r\n                {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                            \"code\": \"outpatient\",\r\n                            \"display\": \"Outpatient\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"medicationReference\": {\r\n                \"reference\": \"Medication/3338\",\r\n                \"display\": \"Sildenafil 50 mg comprimido\"\r\n            },\r\n            \"subject\": {\r\n                \"reference\": \"Patient/3243\"\r\n            },\r\n            \"requester\": {\r\n                \"reference\": \"Practitioner/2152\"\r\n            },\r\n            \"groupIdentifier\": {\r\n                \"value\": \"mlYX2ZjzoE1\"\r\n            },\r\n            \"courseOfTherapyType\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                        \"code\": \"acute\",\r\n                        \"display\": \"Terapia a corto plazo (aguda)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"note\": [\r\n                {\r\n                    \"text\": \"Consumirlo cada vez que lo necesite\"\r\n                }\r\n            ],\r\n            \"dosageInstruction\": [\r\n                {\r\n                    \"sequence\": 1,\r\n                    \"text\": \"Tomar 1 comprimido una vez al día, de manera oral y tragarla, durante 3 meses\",\r\n                    \"timing\": {\r\n                        \"repeat\": {\r\n                            \"boundsDuration\": {\r\n                                \"value\": 3,\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"m\"\r\n                            },\r\n                            \"frequency\": 1,\r\n                            \"period\": 1,\r\n                            \"periodUnit\": \"d\"\r\n                        }\r\n                    },\r\n                    \"route\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                                \"code\": \"26643006\",\r\n                                \"display\": \"vía Oral route (calificador)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"method\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                                \"code\": \"738995006\",\r\n                                \"display\": \"Tragar (método de administración)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"doseAndRate\": [\r\n                        {\r\n                            \"doseQuantity\": {\r\n                                \"value\": 1,\r\n                                \"unit\": \"Comprimido\",\r\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                                \"code\": \"comprimido\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"dispenseRequest\": {\r\n                \"validityPeriod\": {\r\n                    \"start\": \"2024-01-06\",\r\n                    \"end\": \"2024-03-06\"\r\n                }\r\n            }\r\n        }\r\n    ],\r\n    \"basedOn\": [\r\n        {\r\n            \"reference\": \"#3447\"\r\n        }\r\n    ],\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE1\"\r\n    },\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3243\"\r\n    },\r\n    \"authoredOn\": \"2024-01-11T15:17:12.314Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/RequestGroup",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"RequestGroup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 18:43:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "KD9MiGg7SLYjZLdI"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/RequestGroup/3449/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 18:43:58 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/RequestGroup/3449/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "50"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "2"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=O76bMULZryohXZYRUXr0B%2FI0Bs2s8dQ2YWTtLyvhSQmlEcO87hXyDHT2hBV5KjydGQqyPqkgjltdAy0NqRxI0zr9ti9uZhacTBJftt83%2BHJluoulltxYNiw2YPoDLJvSog%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843f4ef0ddd47527-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"RequestGroup\",\n    \"id\": \"3449\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T18:43:58.284+00:00\",\n        \"source\": \"#KD9MiGg7SLYjZLdI\",\n        \"profile\": [\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl\"\n        ]\n    },\n    \"contained\": [\n        {\n            \"resourceType\": \"MedicationRequest\",\n            \"id\": \"3447\",\n            \"meta\": {\n                \"source\": \"#sICOmBgAcJcc9kj2\",\n                \"profile\": [\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n                ]\n            },\n            \"extension\": [\n                {\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n                    \"valueReference\": {\n                        \"reference\": \"Medication/3338\"\n                    }\n                }\n            ],\n            \"status\": \"active\",\n            \"intent\": \"order\",\n            \"category\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                            \"code\": \"outpatient\",\n                            \"display\": \"Outpatient\"\n                        }\n                    ]\n                }\n            ],\n            \"medicationReference\": {\n                \"reference\": \"Medication/3338\",\n                \"display\": \"Sildenafil 50 mg comprimido\"\n            },\n            \"subject\": {\n                \"reference\": \"Patient/3243\"\n            },\n            \"requester\": {\n                \"reference\": \"Practitioner/2152\"\n            },\n            \"groupIdentifier\": {\n                \"value\": \"mlYX2ZjzoE1\"\n            },\n            \"courseOfTherapyType\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                        \"code\": \"acute\",\n                        \"display\": \"Terapia a corto plazo (aguda)\"\n                    }\n                ]\n            },\n            \"note\": [\n                {\n                    \"text\": \"Consumirlo cada vez que lo necesite\"\n                }\n            ],\n            \"dosageInstruction\": [\n                {\n                    \"sequence\": 1,\n                    \"text\": \"Tomar 1 comprimido una vez al día, de manera oral y tragarla, durante 3 meses\",\n                    \"timing\": {\n                        \"repeat\": {\n                            \"boundsDuration\": {\n                                \"value\": 3,\n                                \"system\": \"http://unitsofmeasure.org\",\n                                \"code\": \"m\"\n                            },\n                            \"frequency\": 1,\n                            \"period\": 1,\n                            \"periodUnit\": \"d\"\n                        }\n                    },\n                    \"route\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                                \"code\": \"26643006\",\n                                \"display\": \"vía Oral route (calificador)\"\n                            }\n                        ]\n                    },\n                    \"method\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                                \"code\": \"738995006\",\n                                \"display\": \"Tragar (método de administración)\"\n                            }\n                        ]\n                    },\n                    \"doseAndRate\": [\n                        {\n                            \"doseQuantity\": {\n                                \"value\": 1,\n                                \"unit\": \"Comprimido\",\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                                \"code\": \"comprimido\"\n                            }\n                        }\n                    ]\n                }\n            ],\n            \"dispenseRequest\": {\n                \"validityPeriod\": {\n                    \"start\": \"2024-01-06\",\n                    \"end\": \"2024-03-06\"\n                }\n            }\n        }\n    ],\n    \"basedOn\": [\n        {\n            \"reference\": \"#3447\"\n        }\n    ],\n    \"groupIdentifier\": {\n        \"value\": \"mlYX2ZjzoE1\"\n    },\n    \"status\": \"active\",\n    \"intent\": \"order\",\n    \"subject\": {\n        \"reference\": \"Patient/3243\"\n    },\n    \"authoredOn\": \"2024-01-11T15:17:12.314Z\"\n}"
+						},
+						{
+							"name": "2.3 /2.4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"RequestGroup\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl\"\r\n        ]\r\n    },\r\n    \"contained\": [\r\n        {\r\n            \"resourceType\": \"MedicationRequest\",\r\n            \"id\": \"3660\",\r\n            \"meta\": {\r\n                \"versionId\": \"1\",\r\n                \"lastUpdated\": \"2024-01-11T19:35:55.021+00:00\",\r\n                \"source\": \"#n87kLBHwndXk9XEw\",\r\n                \"profile\": [\r\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n                ]\r\n            },\r\n            \"extension\": [\r\n                {\r\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n                    \"valueReference\": {\r\n                        \"reference\": \"Medication/3540\"\r\n                    }\r\n                }\r\n            ],\r\n            \"status\": \"active\",\r\n            \"intent\": \"order\",\r\n            \"category\": [\r\n                {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                            \"code\": \"outpatient\",\r\n                            \"display\": \"Outpatient\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"medicationReference\": {\r\n                \"reference\": \"Medication/3540\",\r\n                \"display\": \"amoxicilina 500 mg/ 5 mL polvo para preparado oral\"\r\n            },\r\n            \"subject\": {\r\n                \"reference\": \"Patient/3631\"\r\n            },\r\n            \"requester\": {\r\n                \"reference\": \"Practitioner/2152\"\r\n            },\r\n            \"groupIdentifier\": {\r\n                \"value\": \"mlYX2ZjzoE2\"\r\n            },\r\n            \"courseOfTherapyType\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                        \"code\": \"acute\",\r\n                        \"display\": \"Terapia a corto plazo (aguda)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"note\": [\r\n                {\r\n                    \"text\": \"Debe completar el tratamiento\"\r\n                }\r\n            ],\r\n            \"dosageInstruction\": [\r\n                {\r\n                    \"sequence\": 1,\r\n                    \"text\": \"Tomar 3.5 mililitros cada 8 horas durante 10 dias\",\r\n                    \"timing\": {\r\n                        \"repeat\": {\r\n                            \"boundsDuration\": {\r\n                                \"value\": 10,\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"d\"\r\n                            },\r\n                            \"frequency\": 1,\r\n                            \"period\": 8,\r\n                            \"periodUnit\": \"h\"\r\n                        }\r\n                    },\r\n                    \"route\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                                \"code\": \"26643006\",\r\n                                \"display\": \"vía Oral route (calificador)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"method\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                                \"code\": \"738995006\",\r\n                                \"display\": \"Tragar (método de administración)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"doseAndRate\": [\r\n                        {\r\n                            \"doseQuantity\": {\r\n                                \"value\": 3.5,\r\n                                \"unit\": \"Mililitro\",\r\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                                \"code\": \"mililitro\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"dispenseRequest\": {\r\n                \"validityPeriod\": {\r\n                    \"start\": \"2024-01-06\",\r\n                    \"end\": \"2024-03-06\"\r\n                }\r\n            }\r\n        },\r\n        {\r\n            \"resourceType\": \"MedicationRequest\",\r\n            \"id\": \"3669\",\r\n            \"meta\": {\r\n                \"versionId\": \"1\",\r\n                \"lastUpdated\": \"2024-01-11T19:37:46.235+00:00\",\r\n                \"source\": \"#IHpfY4SiMrRl7koR\",\r\n                \"profile\": [\r\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n                ]\r\n            },\r\n            \"extension\": [\r\n                {\r\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n                    \"valueReference\": {\r\n                        \"reference\": \"Medication/3542\"\r\n                    }\r\n                }\r\n            ],\r\n            \"status\": \"active\",\r\n            \"intent\": \"order\",\r\n            \"category\": [\r\n                {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                            \"code\": \"outpatient\",\r\n                            \"display\": \"Outpatient\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"medicationReference\": {\r\n                \"reference\": \"Medication/3542\",\r\n                \"display\": \"ibuprofeno 100 mg/5 mL suspensión oral\"\r\n            },\r\n            \"subject\": {\r\n                \"reference\": \"Patient/3631\"\r\n            },\r\n            \"requester\": {\r\n                \"reference\": \"Practitioner/2152\"\r\n            },\r\n            \"groupIdentifier\": {\r\n                \"value\": \"mlYX2ZjzoE2\"\r\n            },\r\n            \"courseOfTherapyType\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                        \"code\": \"acute\",\r\n                        \"display\": \"Terapia a corto plazo (aguda)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"note\": [\r\n                {\r\n                    \"text\": \"En caso de fiebre\"\r\n                }\r\n            ],\r\n            \"dosageInstruction\": [\r\n                {\r\n                    \"sequence\": 1,\r\n                    \"text\": \"Tomar 5 mililitros cada 8 horas durante 5 dias\",\r\n                    \"timing\": {\r\n                        \"repeat\": {\r\n                            \"boundsDuration\": {\r\n                                \"value\": 5,\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"d\"\r\n                            },\r\n                            \"frequency\": 1,\r\n                            \"period\": 8,\r\n                            \"periodUnit\": \"h\"\r\n                        }\r\n                    },\r\n                    \"route\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                                \"code\": \"26643006\",\r\n                                \"display\": \"vía Oral route (calificador)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"method\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                                \"code\": \"738995006\",\r\n                                \"display\": \"Tragar (método de administración)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"doseAndRate\": [\r\n                        {\r\n                            \"doseQuantity\": {\r\n                                \"value\": 5,\r\n                                \"unit\": \"Mililitro\",\r\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                                \"code\": \"mililitro\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"dispenseRequest\": {\r\n                \"validityPeriod\": {\r\n                    \"start\": \"2024-01-06\",\r\n                    \"end\": \"2024-03-06\"\r\n                }\r\n            }\r\n        }\r\n    ],\r\n    \"basedOn\": [\r\n        {\r\n            \"reference\": \"#3660\"\r\n        },\r\n        {\r\n            \"reference\": \"#3669\"\r\n        }\r\n    ],\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE2\"\r\n    },\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3631\"\r\n    },\r\n    \"authoredOn\": \"2024-01-11T15:17:12.314Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/RequestGroup",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"RequestGroup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:40:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "4qjJcFCeA4F05j4w"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/RequestGroup/3691/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:40:14 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/RequestGroup/3691/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "69"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "8"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=vGn0EbQ3DZTW%2Fa7lWTX7EoNRV1xv0U0PghIStBy%2BCOR2MRPi927%2F29Z0ycuPhFmu9oAUWXWbF%2F0OrLIk%2FeBmDdWaCb1Bdeic8AWwt9rRf%2F4c%2BhC1cYG62H0GhQaFdrqlSg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843fa15e6f936f2b-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"RequestGroup\",\n    \"id\": \"3691\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:40:14.568+00:00\",\n        \"source\": \"#4qjJcFCeA4F05j4w\",\n        \"profile\": [\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl\"\n        ]\n    },\n    \"contained\": [\n        {\n            \"resourceType\": \"MedicationRequest\",\n            \"id\": \"3660\",\n            \"meta\": {\n                \"source\": \"#n87kLBHwndXk9XEw\",\n                \"profile\": [\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n                ]\n            },\n            \"extension\": [\n                {\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n                    \"valueReference\": {\n                        \"reference\": \"Medication/3540\"\n                    }\n                }\n            ],\n            \"status\": \"active\",\n            \"intent\": \"order\",\n            \"category\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                            \"code\": \"outpatient\",\n                            \"display\": \"Outpatient\"\n                        }\n                    ]\n                }\n            ],\n            \"medicationReference\": {\n                \"reference\": \"Medication/3540\",\n                \"display\": \"amoxicilina 500 mg/ 5 mL polvo para preparado oral\"\n            },\n            \"subject\": {\n                \"reference\": \"Patient/3631\"\n            },\n            \"requester\": {\n                \"reference\": \"Practitioner/2152\"\n            },\n            \"groupIdentifier\": {\n                \"value\": \"mlYX2ZjzoE2\"\n            },\n            \"courseOfTherapyType\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                        \"code\": \"acute\",\n                        \"display\": \"Terapia a corto plazo (aguda)\"\n                    }\n                ]\n            },\n            \"note\": [\n                {\n                    \"text\": \"Debe completar el tratamiento\"\n                }\n            ],\n            \"dosageInstruction\": [\n                {\n                    \"sequence\": 1,\n                    \"text\": \"Tomar 3.5 mililitros cada 8 horas durante 10 dias\",\n                    \"timing\": {\n                        \"repeat\": {\n                            \"boundsDuration\": {\n                                \"value\": 10,\n                                \"system\": \"http://unitsofmeasure.org\",\n                                \"code\": \"d\"\n                            },\n                            \"frequency\": 1,\n                            \"period\": 8,\n                            \"periodUnit\": \"h\"\n                        }\n                    },\n                    \"route\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                                \"code\": \"26643006\",\n                                \"display\": \"vía Oral route (calificador)\"\n                            }\n                        ]\n                    },\n                    \"method\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                                \"code\": \"738995006\",\n                                \"display\": \"Tragar (método de administración)\"\n                            }\n                        ]\n                    },\n                    \"doseAndRate\": [\n                        {\n                            \"doseQuantity\": {\n                                \"value\": 3.5,\n                                \"unit\": \"Mililitro\",\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                                \"code\": \"mililitro\"\n                            }\n                        }\n                    ]\n                }\n            ],\n            \"dispenseRequest\": {\n                \"validityPeriod\": {\n                    \"start\": \"2024-01-06\",\n                    \"end\": \"2024-03-06\"\n                }\n            }\n        },\n        {\n            \"resourceType\": \"MedicationRequest\",\n            \"id\": \"3669\",\n            \"meta\": {\n                \"source\": \"#IHpfY4SiMrRl7koR\",\n                \"profile\": [\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n                ]\n            },\n            \"extension\": [\n                {\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n                    \"valueReference\": {\n                        \"reference\": \"Medication/3542\"\n                    }\n                }\n            ],\n            \"status\": \"active\",\n            \"intent\": \"order\",\n            \"category\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                            \"code\": \"outpatient\",\n                            \"display\": \"Outpatient\"\n                        }\n                    ]\n                }\n            ],\n            \"medicationReference\": {\n                \"reference\": \"Medication/3542\",\n                \"display\": \"ibuprofeno 100 mg/5 mL suspensión oral\"\n            },\n            \"subject\": {\n                \"reference\": \"Patient/3631\"\n            },\n            \"requester\": {\n                \"reference\": \"Practitioner/2152\"\n            },\n            \"groupIdentifier\": {\n                \"value\": \"mlYX2ZjzoE2\"\n            },\n            \"courseOfTherapyType\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                        \"code\": \"acute\",\n                        \"display\": \"Terapia a corto plazo (aguda)\"\n                    }\n                ]\n            },\n            \"note\": [\n                {\n                    \"text\": \"En caso de fiebre\"\n                }\n            ],\n            \"dosageInstruction\": [\n                {\n                    \"sequence\": 1,\n                    \"text\": \"Tomar 5 mililitros cada 8 horas durante 5 dias\",\n                    \"timing\": {\n                        \"repeat\": {\n                            \"boundsDuration\": {\n                                \"value\": 5,\n                                \"system\": \"http://unitsofmeasure.org\",\n                                \"code\": \"d\"\n                            },\n                            \"frequency\": 1,\n                            \"period\": 8,\n                            \"periodUnit\": \"h\"\n                        }\n                    },\n                    \"route\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                                \"code\": \"26643006\",\n                                \"display\": \"vía Oral route (calificador)\"\n                            }\n                        ]\n                    },\n                    \"method\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                                \"code\": \"738995006\",\n                                \"display\": \"Tragar (método de administración)\"\n                            }\n                        ]\n                    },\n                    \"doseAndRate\": [\n                        {\n                            \"doseQuantity\": {\n                                \"value\": 5,\n                                \"unit\": \"Mililitro\",\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                                \"code\": \"mililitro\"\n                            }\n                        }\n                    ]\n                }\n            ],\n            \"dispenseRequest\": {\n                \"validityPeriod\": {\n                    \"start\": \"2024-01-06\",\n                    \"end\": \"2024-03-06\"\n                }\n            }\n        }\n    ],\n    \"basedOn\": [\n        {\n            \"reference\": \"#3660\"\n        },\n        {\n            \"reference\": \"#3669\"\n        }\n    ],\n    \"groupIdentifier\": {\n        \"value\": \"mlYX2ZjzoE2\"\n    },\n    \"status\": \"active\",\n    \"intent\": \"order\",\n    \"subject\": {\n        \"reference\": \"Patient/3631\"\n    },\n    \"authoredOn\": \"2024-01-11T15:17:12.314Z\"\n}"
+						},
+						{
+							"name": "3.3 / 3.4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"RequestGroup\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl\"\r\n        ]\r\n    },\r\n    \"contained\": [\r\n        {\r\n            \"resourceType\": \"MedicationRequest\",\r\n            \"id\": \"3798\",\r\n            \"meta\": {\r\n                \"versionId\": \"1\",\r\n                \"lastUpdated\": \"2024-01-11T19:58:15.278+00:00\",\r\n                \"source\": \"#VXGbL04h2Vu8DW1r\",\r\n                \"profile\": [\r\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\r\n                ]\r\n            },\r\n            \"extension\": [\r\n                {\r\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\r\n                    \"valueReference\": {\r\n                        \"reference\": \"Medication/3543\"\r\n                    }\r\n                }\r\n            ],\r\n            \"identifier\": [\r\n                {\r\n                    \"type\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion\",\r\n                                \"code\": \"Id_Cheque\",\r\n                                \"display\": \"Id_Cheque\"\r\n                            }\r\n                        ]\r\n                    }\r\n                }\r\n            ],\r\n            \"status\": \"active\",\r\n            \"intent\": \"order\",\r\n            \"category\": [\r\n                {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                            \"code\": \"outpatient\",\r\n                            \"display\": \"Outpatient\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"medicationReference\": {\r\n                \"reference\": \"Medication/3543\",\r\n                \"display\": \"Fentermina 37,5 mg comprimido\"\r\n            },\r\n            \"subject\": {\r\n                \"reference\": \"Patient/3746\"\r\n            },\r\n            \"requester\": {\r\n                \"reference\": \"Practitioner/2152\"\r\n            },\r\n            \"groupIdentifier\": {\r\n                \"value\": \"mlYX2ZjzoE3\"\r\n            },\r\n            \"courseOfTherapyType\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\r\n                        \"code\": \"acute\",\r\n                        \"display\": \"Terapia a corto plazo (aguda)\"\r\n                    }\r\n                ]\r\n            },\r\n            \"note\": [\r\n                {\r\n                    \"text\": \"Administrar todos los días en ayuno\"\r\n                }\r\n            ],\r\n            \"dosageInstruction\": [\r\n                {\r\n                    \"sequence\": 1,\r\n                    \"text\": \"Tomar 1 comprimido al dia durante 3 meses\",\r\n                    \"timing\": {\r\n                        \"repeat\": {\r\n                            \"boundsDuration\": {\r\n                                \"value\": 3,\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"m\"\r\n                            },\r\n                            \"frequency\": 1,\r\n                            \"period\": 1,\r\n                            \"periodUnit\": \"d\"\r\n                        }\r\n                    },\r\n                    \"route\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\r\n                                \"code\": \"26643006\",\r\n                                \"display\": \"vía Oral route (calificador)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"method\": {\r\n                        \"coding\": [\r\n                            {\r\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\r\n                                \"code\": \"738995006\",\r\n                                \"display\": \"Tragar (método de administración)\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    \"doseAndRate\": [\r\n                        {\r\n                            \"doseQuantity\": {\r\n                                \"value\": 1,\r\n                                \"unit\": \"Comprimido\",\r\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\r\n                                \"code\": \"comprimido\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"dispenseRequest\": {\r\n                \"validityPeriod\": {\r\n                    \"start\": \"2024-01-06\",\r\n                    \"end\": \"2024-03-06\"\r\n                }\r\n            }\r\n        }\r\n    ],\r\n    \"basedOn\": [\r\n        {\r\n            \"reference\": \"#3798\"\r\n        }\r\n    ],\r\n    \"groupIdentifier\": {\r\n        \"value\": \"mlYX2ZjzoE3\"\r\n    },\r\n    \"status\": \"active\",\r\n    \"intent\": \"order\",\r\n    \"subject\": {\r\n        \"reference\": \"Patient/3746\"\r\n    },\r\n    \"authoredOn\": \"2024-01-11T15:17:12.314Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-url}}/RequestGroup",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"RequestGroup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 19:59:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 6.8.3 REST Server (FHIR Server; FHIR 4.0.1/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "pXk1fxZ1uLKz40DD"
+								},
+								{
+									"key": "Content-Location",
+									"value": "http://hapi-fhir-server:8080/fhir/RequestGroup/3804/_history/1"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 11 Jan 2024 19:59:33 GMT"
+								},
+								{
+									"key": "Location",
+									"value": "http://hapi-fhir-server:8080/fhir/RequestGroup/3804/_history/1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "45"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "5"
+								},
+								{
+									"key": "Via",
+									"value": "kong/2.8.3"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=liZcPzIoMrUz9bRQp%2F7CsvXtss8TgDGVMZid8IlVOYYxJyRblOJ3mX811dTZIakTYXhxY6CPATCLNbXchvTyOminvxWlfQOXt40QXErfUH8Ps4e%2FRKkqczfjovz5JQ4Kmg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "843fbda87ad66f2f-SCL"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"RequestGroup\",\n    \"id\": \"3804\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2024-01-11T19:59:33.280+00:00\",\n        \"source\": \"#pXk1fxZ1uLKz40DD\",\n        \"profile\": [\n            \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl\"\n        ]\n    },\n    \"contained\": [\n        {\n            \"resourceType\": \"MedicationRequest\",\n            \"id\": \"3798\",\n            \"meta\": {\n                \"source\": \"#VXGbL04h2Vu8DW1r\",\n                \"profile\": [\n                    \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl\"\n                ]\n            },\n            \"extension\": [\n                {\n                    \"url\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial\",\n                    \"valueReference\": {\n                        \"reference\": \"Medication/3543\"\n                    }\n                }\n            ],\n            \"identifier\": [\n                {\n                    \"type\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion\",\n                                \"code\": \"Id_Cheque\",\n                                \"display\": \"Id_Cheque\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"status\": \"active\",\n            \"intent\": \"order\",\n            \"category\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                            \"code\": \"outpatient\",\n                            \"display\": \"Outpatient\"\n                        }\n                    ]\n                }\n            ],\n            \"medicationReference\": {\n                \"reference\": \"Medication/3543\",\n                \"display\": \"Fentermina 37,5 mg comprimido\"\n            },\n            \"subject\": {\n                \"reference\": \"Patient/3746\"\n            },\n            \"requester\": {\n                \"reference\": \"Practitioner/2152\"\n            },\n            \"groupIdentifier\": {\n                \"value\": \"mlYX2ZjzoE3\"\n            },\n            \"courseOfTherapyType\": {\n                \"coding\": [\n                    {\n                        \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron\",\n                        \"code\": \"acute\",\n                        \"display\": \"Terapia a corto plazo (aguda)\"\n                    }\n                ]\n            },\n            \"note\": [\n                {\n                    \"text\": \"Administrar todos los días en ayuno\"\n                }\n            ],\n            \"dosageInstruction\": [\n                {\n                    \"sequence\": 1,\n                    \"text\": \"Tomar 1 comprimido al dia durante 3 meses\",\n                    \"timing\": {\n                        \"repeat\": {\n                            \"boundsDuration\": {\n                                \"value\": 3,\n                                \"system\": \"http://unitsofmeasure.org\",\n                                \"code\": \"m\"\n                            },\n                            \"frequency\": 1,\n                            \"period\": 1,\n                            \"periodUnit\": \"d\"\n                        }\n                    },\n                    \"route\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin\",\n                                \"code\": \"26643006\",\n                                \"display\": \"vía Oral route (calificador)\"\n                            }\n                        ]\n                    },\n                    \"method\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos\",\n                                \"code\": \"738995006\",\n                                \"display\": \"Tragar (método de administración)\"\n                            }\n                        ]\n                    },\n                    \"doseAndRate\": [\n                        {\n                            \"doseQuantity\": {\n                                \"value\": 1,\n                                \"unit\": \"Comprimido\",\n                                \"system\": \"https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial\",\n                                \"code\": \"comprimido\"\n                            }\n                        }\n                    ]\n                }\n            ],\n            \"dispenseRequest\": {\n                \"validityPeriod\": {\n                    \"start\": \"2024-01-06\",\n                    \"end\": \"2024-03-06\"\n                }\n            }\n        }\n    ],\n    \"basedOn\": [\n        {\n            \"reference\": \"#3798\"\n        }\n    ],\n    \"groupIdentifier\": {\n        \"value\": \"mlYX2ZjzoE3\"\n    },\n    \"status\": \"active\",\n    \"intent\": \"order\",\n    \"subject\": {\n        \"reference\": \"Patient/3746\"\n    },\n    \"authoredOn\": \"2024-01-11T15:17:12.314Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get Patient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server-url}}/Patient?identifier=25534964-3",
+					"host": [
+						"{{server-url}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "25534964-3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server-url}}/Medication",
+					"host": [
+						"{{server-url}}"
+					],
+					"path": [
+						"Medication"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "F1TyFNf8eR",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "Búho60",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server-url",
+			"value": "http://hapi.onfhir.cl/fhir",
+			"type": "string"
+		},
+		{
+			"key": "client1-id",
+			"value": "3237",
+			"type": "string"
+		},
+		{
+			"key": "prescriptor-id",
+			"value": "2152",
+			"type": "string"
+		}
+	]
+}
