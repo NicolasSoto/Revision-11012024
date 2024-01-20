@@ -1,0 +1,126 @@
+{
+  "resourceType": "RequestGroup",
+  "meta": {
+    "profile": [
+      "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "MedicationRequest",
+      "id": "presc-1",
+      "meta": {
+        "profile": [
+          "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+        ]
+      },
+      "status": "active",
+      "intent": "order",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+              "code": "outpatient",
+              "display": "Ambulatorio"
+            }
+          ]
+        }
+      ],
+      "medicationReference": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/fhir/Medication/3408",
+        "display": "Sildenafil 50 mg"
+      },
+      "subject": {
+        "reference": "https://hapi.onfhir.cl/fhir/Patient/3288/_history/1",
+        "type": "Patient"
+      },
+      "authoredOn": "2024-01-06T10:00:00-03:00",
+      "requester": {
+        "reference": "https://hapi.onfhir.cl/fhir/Practitioner/2152",
+        "type": "Practitioner"
+      },
+      "recorder": {
+        "reference": "https://hapi.onfhir.cl/fhir/Practitioner/2152",
+        "type": "Practitioner"
+      },
+      "groupIdentifier": {
+        "value": "rp05mV-_wq-gFjTyOMngU"
+      },
+      "note": [
+        {
+          "text": "Consumirlo cada vez que lo necesite"
+        }
+      ],
+      "dosageInstruction": [
+        {
+          "timing": {
+            "repeat": {
+              "boundsDuration": {
+                "value": 3,
+                "unit": "mo",
+                "system": "http://unitsofmeasure.org",
+                "code": "mo"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "d"
+            }
+          },
+          "asNeededBoolean": true,
+          "route": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                "code": "26643006",
+                "display": "vía Oral route (calificador)"
+              }
+            ]
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                "code": "738995006",
+                "display": "Tragar (método de administración)"
+              }
+            ]
+          },
+          "doseAndRate": [
+            {
+              "doseQuantity": {
+                "value": 1,
+                "unit": "pastilla"
+              }
+            }
+          ]
+        }
+      ],
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2024-01-06T10:00:00-03:00",
+          "end": "2024-07-04T10:00:00-04:00"
+        }
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "#presc-1"
+    }
+  ],
+  "groupIdentifier": {
+    "value": "rp05mV-_wq-gFjTyOMngU"
+  },
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "https://hapi.onfhir.cl/fhir/Patient/3288/_history/1",
+    "type": "Patient"
+  },
+  "authoredOn": "2024-01-06T10:00:00-03:00",
+  "author": {
+    "reference": "https://hapi.onfhir.cl/fhir/Practitioner/2152",
+    "type": "Practitioner"
+  }
+}

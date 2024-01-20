@@ -1,0 +1,101 @@
+{
+    "resourceType": "RequestGroup",
+    "groupIdentifier": {
+        "value": "{{UUDI}}"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "display": "David HPH Montero",
+        "reference": "{{URL}}/v2/Patient/3698"
+    },
+    "authoredOn": "2024-01-12T10:22:49.103Z",
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "status": "active",
+            "intent": "order",
+            "subject": {
+                "display": "David HPH Montero",
+                "reference": "{{URL}}/Patient/3698"
+            },
+            "authoredOn": "2024-01-11T20:22:49.103Z",
+            "medicationReference": {
+                "reference": "http://hapi.onfhir.cl/fhir/Medication/1669211000167110",
+                "display": "Sildenafil 50 mg comprimido"
+            },
+            "requester": {
+                "display": "Maria Carmen De los angeles Del rio Gonzalez",
+                "reference": "{{URL}}/v2/Practitioner/3951"
+            },
+            "groupIdentifier": {
+                "value": "{{UUDI}}"
+            },
+            "identifier": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion",
+                                "code": "Id_Local",
+                                "display": "Id_Local"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "text": "Administrar 1 vez al día, de manera oral y tragarla, durante 3 meses.",
+                    "patientInstruction": "consumirlo cada vez que lo necesite",
+                    "sequence": 1,
+                    "timing": {
+                        "repeat": {
+                            "period": 24,
+                            "frequency": 1,
+                            "periodUnit": "h",
+                            "boundsDuration": {
+                                "code": "m",
+                                "value": 3,
+                                "system": "http://unitsofmeasure.org"
+                            }
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "unit": "Comprimido",
+                                "code": "comprimido",
+                                "system": "http://recetaelectronica.minsal.cl/gi-fhir/CodeSystem/CSUnidadAsistencial"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-06",
+                    "end": "2024-04-06"
+                }
+            }
+        }
+    ]
+}

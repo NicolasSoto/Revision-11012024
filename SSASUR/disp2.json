@@ -1,0 +1,43 @@
+{
+    "resourceType": "MedicationDispense",
+    "status": "completed",
+    "subject": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Patient/3892",
+        "display": "Pedro Soto del Valle"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/MedicationRequest/HGHryTr9Auy-5fkb5GGQ"
+        }
+    ],
+    "medicationReference": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Medication/2111871000167119",
+        "display": "amobiotic 500 mg/5 mL polvo para suspensión oral con solvente (Lab Chile) 1 frasco 120 mililitros"
+    },
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSF",
+                        "code": "dispensador",
+                        "display": "Dispensador"
+                    }
+                ]
+            },
+            "actor": {
+                "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Practitioner/2524",
+                "display": "Químico Prueba Receta Electronica"
+            }
+        }
+    ],
+    "location": {
+        "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Location/2526",
+        "display": "CRUZ VERDE- Local: 0304"
+    },
+    "whenHandedOver": "2024-01-06T14:22:27.900Z",
+    "quantity": {
+        "value": 2,
+        "system": "http://unitsofmeasure.org"
+    }
+}

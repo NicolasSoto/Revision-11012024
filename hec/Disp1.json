@@ -1,0 +1,46 @@
+{
+  "resourceType": "MedicationDispense",
+  "meta": {
+    "profile": [
+      "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/DispensacionMedicamentoCl"
+    ]
+  },
+  "status": "completed",
+  "medicationReference": {
+    "reference": "Medication/3467",
+    "display": "viagra 50 mg comprimido recubierto (Pfizer)"
+  },
+  "subject": {
+    "reference": "Patient/3326",
+    "display": "David Jose TAKEMED Montero Colina"
+  },
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSFuncionProfesionalDispensacion",
+            "code": "Dispensador"
+          }
+        ]
+      },
+      "actor": {
+        "reference": "Practitioner/534"
+      }
+    }
+  ],
+  "location": {
+    "reference": "Location/2526",
+    "display": "Farmacia La Botica del Hospital El Carmen"
+  },
+  "authorizingPrescription": [
+    {
+      "reference": "MedicationRequest/3743"
+    }
+  ],
+  "quantity": {
+    "value": 8,
+    "system": "http://unitsofmeasure.org"
+  },
+  "whenHandedOver": "2024-01-12T14:47:33.388Z"
+}

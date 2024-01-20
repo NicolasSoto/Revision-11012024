@@ -1,0 +1,142 @@
+{
+  "resourceType": "RequestGroup",
+  "meta": {
+    "profile": [
+      "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "MedicationRequest",
+      "id": "presc-1",
+      "meta": {
+        "profile": [
+          "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+        ]
+      },
+      "status": "active",
+      "intent": "order",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+              "code": "outpatient",
+              "display": "Ambulatorio"
+            }
+          ]
+        }
+      ],
+      "medicationReference": {
+        "reference": "https://hapi.onfhir.cl/fhir/fhir/Medication/3543",
+        "display": "Fentermina 37,5 mg comprimido"
+      },
+      "subject": {
+        "reference": "https://hapi.onfhir.cl/fhir/Patient/4007/_history/1",
+        "type": "Patient"
+      },
+      "authoredOn": "2024-01-06T10:00:00-03:00",
+      "requester": {
+        "reference": "https://hapi.onfhir.cl/fhir/Practitioner/2152",
+        "type": "Practitioner"
+      },
+      "recorder": {
+        "reference": "https://hapi.onfhir.cl/fhir/Practitioner/2152",
+        "type": "Practitioner"
+      },
+      "groupIdentifier": {
+        "value": "BctbwSIKDWnpgfN5LmLFp"
+      },
+      "courseOfTherapyType": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+            "code": "acute",
+            "display": "Terapia a corto plazo (aguda)"
+          }
+        ]
+      },
+      "note": [
+        {
+          "text": "Administrar todos los días en ayuno"
+        }
+      ],
+      "dosageInstruction": [
+        {
+          "text": "Administrando 1 comprimido oral para tragar, cada 1 día durante 3 meses",
+          "timing": {
+            "repeat": {
+              "boundsDuration": {
+                "value": 3,
+                "unit": "mo",
+                "system": "http://unitsofmeasure.org",
+                "code": "mo"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "d",
+              "when": [
+                "WAKE"
+              ]
+            }
+          },
+          "route": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                "code": "26643006",
+                "display": "vía Oral route (calificador)"
+              }
+            ]
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                "code": "738995006",
+                "display": "Tragar (método de administración)"
+              }
+            ]
+          },
+          "doseAndRate": [
+            {
+              "doseQuantity": {
+                "value": 1,
+                "unit": "comprimido"
+              }
+            }
+          ]
+        }
+      ],
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2024-01-06T10:00:00-03:00",
+          "end": "2024-07-04T10:00:00-04:00"
+        },
+        "quantity": {
+          "value": 90,
+          "unit": "comprimido"
+        }
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "#presc-1"
+    }
+  ],
+  "groupIdentifier": {
+    "value": "BctbwSIKDWnpgfN5LmLFp"
+  },
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "https://hapi.onfhir.cl/fhir/Patient/4007/_history/1",
+    "type": "Patient"
+  },
+  "authoredOn": "2024-01-06T10:00:00-03:00",
+  "author": {
+    "reference": "https://hapi.onfhir.cl/fhir/Practitioner/2152",
+    "type": "Practitioner"
+  }
+}

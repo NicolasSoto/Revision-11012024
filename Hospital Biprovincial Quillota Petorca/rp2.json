@@ -1,0 +1,223 @@
+{
+  "resourceType": "RequestGroup",
+  "meta": {
+    "profile": [
+      "https://interoperabilidad.minsal.cl/fhir/ig/snre/0.9.6/StructureDefinition-RecetaCl"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "MedicationRequest",
+      "meta": {
+        "profile": [
+          "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+        ]
+      },
+      "status": "active",
+      "intent": "order",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+              "code": "outpatient",
+              "display": "Ambulatoria"
+            }
+          ]
+        }
+      ],
+      "medicationReference": {
+        "reference": "Medication/3549",
+        "display": "Amoxicilina 500 mg/ 5 mL polvo"
+      },
+      "subject": {
+        "reference": "Patient/3891",
+        "display": "Martin TIC_HBQP Carrasco"
+      },
+      "requester": {
+        "reference": "Practitioner/3679",
+        "display": "Maria Carmen De los Angeles Del rio Gonzalez"
+      },
+      "groupIdentifier": {
+        "value": "snk6who4807akbutinnu"
+      },
+      "courseOfTherapyType": {
+        "coding": [
+          {
+            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+            "code": "acute",
+            "display": "Terapia a corto plazo (aguda)"
+          }
+        ]
+      },
+      "note": [
+        {
+          "text": "Debe completar el tratamiento"
+        }
+      ],
+      "dosageInstruction": [
+        {
+          "sequence": 1,
+          "text": "Administrando 3.5 mililitros, oral para tragar cada 8 horas durante 10 días",
+          "timing": {
+            "repeat": {
+              "boundsDuration": {
+                "value": 10,
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              },
+              "frequency": 1,
+              "period": 8,
+              "periodUnit": "h"
+            }
+          },
+          "route": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                "code": "26643006",
+                "display": "vía Oral"
+              }
+            ]
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                "code": "738995006",
+                "display": "Administrando 3.5 mililitros"
+              }
+            ]
+          },
+          "doseAndRate": [
+            {
+              "doseQuantity": {
+                "value": 1,
+                "unit": "Polvo",
+                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                "code": "Polvo"
+              }
+            }
+          ]
+        }
+      ],
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2024-01-12",
+          "end": "2024-01-22"
+        }
+      }
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "meta": {
+        "profile": [
+          "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+        ]
+      },
+      "status": "active",
+      "intent": "order",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+              "code": "outpatient",
+              "display": "Ambulatoria"
+            }
+          ]
+        }
+      ],
+      "medicationReference": {
+        "reference": "Medication/3550",
+        "display": "Ibuprofeno 100 mg/5 mL"
+      },
+      "subject": {
+        "reference": "Patient/3891",
+        "display": "Martin TIC_HBQP Carrasco"
+      },
+      "requester": {
+        "reference": "Practitioner/3679",
+        "display": "Maria Carmen De los Angeles Del rio Gonzalez"
+      },
+      "groupIdentifier": {
+        "value": "snk6who4807akbutinnu"
+      },
+      "courseOfTherapyType": {
+        "coding": [
+          {
+            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+            "code": "acute",
+            "display": "Terapia a corto plazo (aguda)"
+          }
+        ]
+      },
+      "note": [
+        {
+          "text": "En caso de fiebre"
+        }
+      ],
+      "dosageInstruction": [
+        {
+          "sequence": 1,
+          "text": "administrando 5 mililitros, oral para tragar cada 8 horas durante 5 días",
+          "timing": {
+            "repeat": {
+              "boundsDuration": {
+                "value": 5,
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              },
+              "frequency": 1,
+              "period": 8,
+              "periodUnit": "h"
+            }
+          },
+          "route": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                "code": "26643006",
+                "display": "vía Oral"
+              }
+            ]
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                "code": "738995006",
+                "display": "5 mililitros"
+              }
+            ]
+          },
+          "doseAndRate": [
+            {
+              "doseQuantity": {
+                "value": 1,
+                "unit": "ml",
+                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                "code": "ml"
+              }
+            }
+          ]
+        }
+      ],
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2024-01-12",
+          "end": "2024-01-22"
+        }
+      }
+    }
+  ],
+  "groupIdentifier": {
+    "value": "snk6who4807akbutinnu"
+  },
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/3683"
+  },
+  "authoredOn": "2024-01-12T15:02:12.314Z"
+}

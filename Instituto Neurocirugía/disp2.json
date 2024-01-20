@@ -1,0 +1,142 @@
+{
+    "resourceType": "MedicationDispense",
+    "id": "Ejemplo2-Dispensacion- claudio",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/DispensacionMedicamentoCl"
+        ]
+    },
+    "status": "completed",
+    "medicationReference": [
+        {
+            "reference": "Medication/2111871000167119",
+            "display": "amobiotic 500 mg/5 mL polvo para suspensión oral con solvente (Lab Chile) 1 frasco 120 mililitros"
+        },
+        {
+            "reference": "Medication/2130211000167112",
+            "display": "niofen suspensión oral (K2 Health&Wellness) 1 frasco 120 mililitros"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/Paciente-2-Claudio"
+    },
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSFuncionProfesionalDispensacion",
+                        "code": "Dispensador"
+                    }
+                ]
+            },
+            "actor": {
+                "reference": "Practitioner/2156"
+            }
+        }
+    ],
+    "location": {
+        "reference": "Location/FA0001",
+        "display": "Cruz Verde - Quillota"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "MedicationRequest/Ejemplo1-prescipcion"
+        }
+    ],
+    "quantity": {
+        "value": 8,
+        "system": "http://unitsofmeasure.org"
+    },
+    "whenHandedOver": "2024-01-12T15:51:32.349Z",
+    "dosageInstruction": [
+        {
+            "sequence": 1,
+            "text": "administrar 5 mililitros, oral para tragar cada 8 horas durante 5 días.",
+            "timing": {
+                "repeat": {
+                    "boundsDuration": {
+                        "value": 5,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    },
+                    "frequency": 1,
+                    "period": 8,
+                    "periodUnit": "h"
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                        "code": "26643006",
+                        "display": "vía Oral route (calificador)"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                        "code": "738995006",
+                        "display": "Tragar (método de administración)"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 5,
+                        "unit": "Mililitro",
+                        "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                        "code": "mililitro"
+                    }
+                }
+            ]
+        },
+        {
+            "sequence": 1,
+            "text": "Administrar 1 Comprimido cada 4 horas por 24 horas",
+            "timing": {
+                "repeat": {
+                    "boundsDuration": {
+                        "value": 10,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    },
+                    "frequency": 1,
+                    "period": 8,
+                    "periodUnit": "h"
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                        "code": "26643006",
+                        "display": "vía Oral route (calificador)"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                        "code": "738995006",
+                        "display": "Tragar (método de administración)"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 3.5,
+                        "unit": "Mililitro",
+                        "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                        "code": "mililitro"
+                    }
+                }
+            ]
+        }
+    ]
+}

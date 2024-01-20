@@ -1,0 +1,221 @@
+{
+    "resourceType": "RequestGroup",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "groupIdentifier": {
+        "value": "d2vJ4O1ube9X0oEYLEKz"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/3275"
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "authoredOn": "2024-01-06T15:02:12.314Z",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                            "code": "community",
+                            "display": "community"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1665981000167113",
+                "display": "amoxicilina 500 mg/ 5 mL polvo para preparado oral"
+            },
+            "subject": {
+                "reference": "Patient/3275"
+            },
+            "requester": {
+                "reference": "Practitioner/50"
+            },
+            "groupIdentifier": {
+                "value": "d2vJ4O1ube9X0oEYLEKz"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "note": [
+                {
+                    "text": "Debe completar el tratamiento"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "Tragar cada 8 horas durante 10 días",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 10,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 8,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 3.5,
+                                "unit": "Mililitro",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-11",
+                    "end": "2024-04-11"
+                }
+            }
+        },
+        {
+            "resourceType": "MedicationRequest",
+            "authoredOn": "2024-01-06T15:02:12.314Z",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                            "code": "community",
+                            "display": "community"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1666361000167111",
+                "display": "Ibuprofeno 100 mg/5 mL suspensión oral"
+            },
+            "subject": {
+                "reference": "Patient/3275"
+            },
+            "requester": {
+                "reference": "Practitioner/50"
+            },
+            "groupIdentifier": {
+                "value": "d2vJ4O1ube9X0oEYLEKz"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "note": [
+                {
+                    "text": "En caso de fiebre"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "Tragar cada 8 horas durante 5 días",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 10,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 5,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 5,
+                                "unit": "Mililitro",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-11",
+                    "end": "2024-04-11"
+                }
+            }
+        }
+    ],
+    "authoredOn": "2024-01-06T15:02:12.314Z"
+}

@@ -1,0 +1,117 @@
+{
+    "resourceType": "RequestGroup",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/3543"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                            "code": "community",
+                            "display": "community"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/3543",
+                "display": "fentermina 37,5 mg comprimido"
+            },
+            "subject": {
+                "reference": "Patient/4488"
+            },
+            "requester": {
+                "reference": "Practitioner/2152"
+            },
+            "groupIdentifier": {
+                "value": "gad0v2csx21tggfoyrh9"
+            },
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "1 compimido oral, tragar cada 1 dia 3 meses",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 90,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 24,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía de administración oral"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "tragar"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 5,
+                                "unit": "mililitros",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitros"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "quantity": {
+                    "value": 90
+                },
+                "validityPeriod": {
+                    "start": "2023-01-12",
+                    "end": "2023-02-12"
+                }
+            }
+        }
+    ],
+    "groupIdentifier": {
+        "value": "gad0v2csx21tggfoyrh9"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/3644",
+        "display": "David Jose Montero"
+    },
+    "authoredOn": "2024-01-12T15:02:12.314Z"
+}

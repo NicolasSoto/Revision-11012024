@@ -1,0 +1,116 @@
+{
+    "resourceType": "RequestGroup",
+    "id": "RecetaClaudioRoman-1",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "id": "Ejemplo1-prescipcion",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/1669211000167110"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "code": "outpatient",
+                            "display": "Ambulatorio"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1669211000167110",
+                "display": "Sildenafil 50 mg comprimido"
+            },
+            "subject": {
+                "reference": "Patient/1000000",
+                "display": "David Jose Montero Colina"
+            },
+            "requester": {
+                "reference": "Practitioner/33333348-1"
+            },
+            "groupIdentifier": {
+                "value": "oRYTGSKm5g"
+            },
+            "note": [
+                {
+                    "text": "En caso de fiebre"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "tomar una vez al día, de manera oral y tragarla, durante 3 meses.",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 3,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "m"
+                            },
+                            "frequency": 1,
+                            "period": 1,
+                            "periodUnit": "d"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-12",
+                    "end": "2024-01-30"
+                }
+            }
+        }
+    ],
+    "basedOn": [
+        {
+            "reference": "#Ejemplo1-prescipcion"
+        }
+    ],
+    "groupIdentifier": {
+        "value": "oRYTGSKm5g"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/1000000"
+    },
+    "authoredOn": "2022-08-20T15:02:12.314Z"
+}

@@ -1,0 +1,41 @@
+{
+    "resourceType" : "MedicationDispense",
+    "status": "completed",
+    "subject": {
+        "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Patient/3914",
+        "display": "Juana Josefina Prat Montes"
+    },
+    "authorizingPrescription": [{
+    	 "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/MedicationRequest/AyDrsTU9dDvTmtQOYsfsX"
+    }],
+    "medicationReference": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Medication/2301911000167112",
+        "display": "elvenir 37,5 mg comprimido recubierto (Abbott) 30 comprimidos"
+    },
+    "performer" : [
+        {
+        "function" : {
+            "coding" : [
+            {
+                "system" : "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSF",
+                "code" : "dispensador",
+                "display" : "Dispensador"
+            }
+            ]
+        },
+        "actor" : {
+            "reference" : "http://ventas.intersystemschile.cl/fhir/r4/cl/Practitioner/2524",
+            "display" : "Químico Prueba Receta Electronica"
+        }
+        }
+    ],
+    "location": {
+        "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Location/2526",
+        "display": "CRUZ VERDE- Local: 0304"
+    },
+    "whenHandedOver": "2024-01-06T14:22:27.900Z",
+    "quantity" : {
+        "value" : 3,
+        "system" : "http://unitsofmeasure.org"
+    }
+}

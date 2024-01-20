@@ -1,0 +1,230 @@
+{
+    "resourceType": "RequestGroup",
+    "id": "RecetaClaudioRoman-3",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "id": "Prespricion-1-Claudio",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/1669211000167110"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "code": "community",
+                            "display": "community"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1665981000167113",
+                "display": "amoxicilina 500 mg/ 5 mL"
+            },
+            "subject": {
+                "reference": "Patient/3548",
+                "display": "Pedro Soto del Valle"
+            },
+            "requester": {
+                "reference": "Practitioner/33333348-1"
+            },
+            "groupIdentifier": {
+                "value": "kP_wqA6R2Jrd"
+            },
+            "note": [
+                {
+                    "text": "Debe completar tratamiento"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "Administrar 1 Comprimido cada 4 horas por 24 horas",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 10,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 8,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 3.5,
+                                "unit": "Mililitro",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-12",
+                    "end": "2024-01-30"
+                }
+            }
+        },
+        {
+            "resourceType": "MedicationRequest",
+            "id": "Prespricion-2-Claudio",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/1669211000167110"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "code": "community",
+                            "display": "community"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1666361000167111",
+                "display": "Ibuprofeno 100 mg/5 mL suspensión oral"
+            },
+            "subject": {
+                "reference": "Patient/3548",
+                "display": "Pedro Soto del Valle"
+            },
+            "requester": {
+                "reference": "Practitioner/33333348-1"
+            },
+            "groupIdentifier": {
+                "value": "kP_wqA6R2Jrd"
+            },
+            "note": [
+                {
+                    "text": "En caso de fiebre"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "administrar 5 mililitros, oral para tragar cada 8 horas durante 5 días.",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 5,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 8,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 5,
+                                "unit": "Mililitro",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-12",
+                    "end": "2024-01-30"
+                }
+            }
+        }
+    ],
+    "basedOn": [
+        {
+            "reference": "#Prespricion-2-Claudio"
+        },
+        {
+            "reference": "#Prespricion-1-Claudio"
+        }
+    ],
+    "groupIdentifier": {
+        "value": "kP_wqA6R2Jrd"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/3548"
+    },
+    "authoredOn": "2024-12-01T14:13:12.314Z"
+}

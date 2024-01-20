@@ -1,0 +1,128 @@
+{
+    "resourceType": "RequestGroup",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/3531"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                            "code": "community",
+                            "display": "community"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/3531",
+                "display": "Sildenafil 50 mg comprimido"
+            },
+            "subject": {
+                "reference": "Patient/3644"
+            },
+            "requester": {
+                "reference": "Practitioner/1779"
+            },
+            "groupIdentifier": {
+                "value": "6dpv269qabuyn1w266rq"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "note": [
+                {
+                    "text": "consumir cada vez que lo necesite"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "Administrar 1 al dia por 3 meses",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 3,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "m"
+                            },
+                            "frequency": 1,
+                            "period": 24,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía de administración oral"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "tragar"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 1,
+                                "unit": "comprimido",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "comprimido"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2023-01-12",
+                    "end": "2023-02-12"
+                }
+            }
+        }
+    ],
+    "groupIdentifier": {
+        "value": "6dpv269qabuyn1w266rq"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/3644",
+        "display": "David Jose Montero"
+    },
+    "authoredOn": "2024-01-12T15:02:12.314Z"
+}

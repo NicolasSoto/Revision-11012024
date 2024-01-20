@@ -1,0 +1,62 @@
+{
+  "resourceType": "MedicationDispense",
+  "meta": {
+    "profile": [
+      "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/DispensacionMedicamentoCl"
+    ]
+  },
+  "status": "completed",
+  "medicationReference": {
+    "reference": "https://hapi.onfhir.cl/fhir/Medication/3546",
+    "display": "amobiotic 500 mg/5 mL polvo para suspensión oral con solvente (Lab Chile) 1 frasco 120 mililitros"
+  },
+  "subject": {
+    "reference": "https://hapi.onfhir.cl/fhir/Patient/3998/_history/1",
+    "type": "Patient"
+  },
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSFuncionProfesionalDispensacion",
+            "code": "Dispensador",
+            "display": "Dispensador"
+          }
+        ]
+      },
+      "actor": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Practitioner/2525"
+      }
+    },
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSFuncionProfesionalDispensacion",
+            "code": "Validador",
+            "display": "Validador"
+          }
+        ]
+      },
+      "actor": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Practitioner/2524"
+      }
+    }
+  ],
+  "location": {
+    "reference": "https://hapi.onfhir.cl/fhir/Location/3060",
+    "display": "Cruz Verde"
+  },
+  "authorizingPrescription": [
+    {
+      "reference": "https://hapi.onfhir.cl/fhir/MedicationRequest/5170/_history/1",
+      "type": "MedicationRequest"
+    }
+  ],
+  "quantity": {
+    "value": 1,
+    "unit": "caja"
+  },
+  "whenHandedOver": "2024-01-07T10:00:00-03:00"
+}

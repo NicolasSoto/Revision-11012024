@@ -1,0 +1,113 @@
+{
+    "resourceType": "RequestGroup",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "id": "6788",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                            "code": "discharge",
+                            "display": "Discharge"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/3543",
+                "display": "fentermina 37,5 mg comprimido"
+            },
+            "subject": {
+                "reference": "Patient/6441"
+            },
+            "requester": {
+                "reference": "Practitioner/2152"
+            },
+            "groupIdentifier": {
+                "value": "2TTWVRLos3x5iX1ON5j70"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "1 comprimido oral para tragar, cada 1 día durante 3 meses",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 3,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "mo"
+                            },
+                            "frequency": 1,
+                            "period": 1,
+                            "periodUnit": "d"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2022-01-12",
+                    "end": "2022-04-12"
+                }
+            },
+            "quantity": {
+                "value": 90
+            }
+        }
+    ],
+    "groupIdentifier": {
+        "value": "2TTWVRLos3x5iX1ON5j70"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/6441"
+    },
+    "basedOn": [
+        {
+            "reference": "#6788"
+        }
+    ],
+    "authoredOn": "2024-01-12T12:00:00.000Z"
+}

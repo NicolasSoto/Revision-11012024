@@ -1,0 +1,191 @@
+{
+    "resourceType": "RequestGroup",
+    "groupIdentifier": {
+        "value": "LnAVREr9dM9SXth0xARs"
+    },
+    "status": "active",
+    "intent": "order",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "id": "presc-1",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "display": " "
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "code": "outpatient",
+                            "display": "Ambulatorio"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1665981000167113",
+                "display": "amoxicilina 500 mg/ 5 mL"
+            },
+            "subject": {
+                "reference": "Patient/4018",
+                "display": "Pedro Soto del Valle"
+            },
+            "authoredOn": "2024-01-12T14:23:41.673504-03:00",
+            "requester": {
+                "display": "Maria Carmen De los angeles Del rio Gonzalez",
+                "reference": "Practitioner/3886"
+            },
+            "groupIdentifier": {
+                "value": "LnAVREr9dM9SXth0xARs"
+            },
+            "note": [
+                {
+                    "text": "Debe completar el tratamiento"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "administrando 3.5 mililitros, oral para tragar cada 8 horas durante 10 días",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 10,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 8,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-12T14:23:41.673504-03:00",
+                    "end": "2024-04-12T14:23:41.673504-04:00"
+                }
+            }
+        },
+        {
+            "resourceType": "MedicationRequest",
+            "id": "presc-2",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "display": " "
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "code": "outpatient",
+                            "display": "Ambulatorio"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1666361000167111",
+                "display": "Ibuprofeno 100 mg/5 mL suspensión oral"
+            },
+            "subject": {
+                "reference": "Patient/4018",
+                "display": "Pedro Soto del Valle"
+            },
+            "authoredOn": "2024-01-12T14:23:41.673504-03:00",
+            "requester": {
+                "display": "Maria Carmen De los angeles Del rio Gonzalez",
+                "reference": "Practitioner/3886"
+            },
+            "groupIdentifier": {
+                "value": "LnAVREr9dM9SXth0xARs"
+            },
+            "note": [
+                {
+                    "text": "En caso de fiebre"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "administrando 5 mililitros, oral para tragar cada 8 horas durante 5 días",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 5,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 8,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-12T14:23:41.673504-03:00",
+                    "end": "2024-04-12T14:23:41.673504-04:00"
+                }
+            }
+        }
+    ],
+    "basedOn": [
+        {
+            "reference": "#presc-1"
+        },
+        {
+            "reference": "#presc-2"
+        }
+    ]
+}

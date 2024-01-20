@@ -1,0 +1,91 @@
+{
+    "resourceType": "RequestGroup",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/0.9.6/StructureDefinition-RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/0.9.6/StructureDefinition-RecetaPrescripcionCl.html"
+                ]
+            },
+            "medicationReference": {
+                "reference": "http://hapi.onfhir.cl/fhir/Medication/3553"
+            },
+            "subject": {
+                "reference": "http://hapi.onfhir.cl/fhir/Patient/79"
+            },
+            "authoredOn": "2024-01-06",
+            "requester": {
+                "reference": "http://hapi.onfhir.cl/fhir/Practitioner/2523"
+            },
+            "groupIdentifier": {
+                "use": "official",
+                "system": "https://nanoid.dev/",
+                "value": "bxdkf9b670wq6927frdg"
+            },
+            "intent": "order",
+            "status": "active",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "code": "outpatient",
+                            "display": "Ambulatorio"
+                        }
+                    ]
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "1 comprimido oral para tragar, cada 1 día durante 3 meses",
+                    "timing": {
+                        "repeat": {
+                            "boundsPeriod": {
+                                "start": "2024-01-12",
+                                "end": "2024-03-12"
+                            },
+                            "frequency": 1,
+                            "period": 1,
+                            "periodMax": 90,
+                            "periodUnit": "d"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Acotado"
+                    }
+                ]
+            }
+        }
+    ],
+    "groupIdentifier": {
+        "value": "bxdkf9b670wq6927frdg"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/79"
+    },
+    "authoredOn": "2024-01-12T15:02:12.314Z"
+}

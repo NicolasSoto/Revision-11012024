@@ -1,0 +1,82 @@
+{
+    "resourceType": "MedicationDispense",
+    "id": "Ejemplo2-Dispensacion",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/DispensacionMedicamentoCl"
+        ]
+    },
+    "status": "completed",
+    "medicationReference": {
+        "reference": "Medication/Medicamento1",
+        "display": "enalapril maleato 10 mg comprimido (Lab Chile) 20 comprimidos"
+    },
+    "subject": {
+        "reference": "Patient/1000000"
+    },
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSFuncionProfesionalDispensacion",
+                        "code": "Dispensador"
+                    }
+                ]
+            },
+            "actor": {
+                "reference": "Practitioner/2156"
+            }
+        }
+    ],
+    "location": {
+        "reference": "Location/FA0001",
+        "display": "Cruz Verde - Quillota"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "MedicationRequest/Ejemplo1-prescipcion"
+        }
+    ],
+    "quantity": {
+        "value": 8,
+        "system": "http://unitsofmeasure.org"
+    },
+    "whenHandedOver": "2024-01-12T15:51:32.349Z",
+    "dosageInstruction": [
+        {
+            "sequence": 1,
+            "text": "tomar una vez al día, de manera oral y tragarla, durante 3 meses.",
+            "timing": {
+                "repeat": {
+                    "boundsDuration": {
+                        "value": 3,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "m"
+                    },
+                    "frequency": 1,
+                    "period": 1,
+                    "periodUnit": "d"
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                        "code": "26643006",
+                        "display": "vía Oral route (calificador)"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                        "code": "738995006",
+                        "display": "Tragar (método de administración)"
+                    }
+                ]
+            }
+        }
+    ]
+}

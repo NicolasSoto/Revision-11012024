@@ -1,0 +1,206 @@
+{
+    "resourceType": "RequestGroup",
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "id": "HGHryTr9Auy-5fkb5GGQ",
+            "intent": "order",
+            "status": "active",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "code": "outpatient",
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "display": "Ambulatorio"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "display": "amoxicilina 500 mg/ 5 mL polvo",
+                "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Medication/1665981000167113"
+            },
+            "subject": {
+                "display": "Pedro Soto del Valle",
+                "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Patient/3892"
+            },
+            "authoredOn": "2024-01-06T17:31:00Z",
+            "requester": {
+                "display": "María Carmen",
+                "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Practitioner/2523"
+            },
+            "groupIdentifier": {
+                "value": "3_dcQQpQCRZDAOtbt39Hx"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "code": "acute",
+                        "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+                        "display": "Short course (acute) therapy"
+                    }
+                ]
+            },
+            "note": [
+                {
+                    "text": "Debe completar el tratamiento"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "patientInstruction": "polvo para preparado oral, administrando 3.5 mililitros",
+                    "timing": {
+                        "repeat": {
+                            "period": 8,
+                            "frequency": 3,
+                            "periodUnit": "h",
+                            "boundsDuration": {
+                                "code": "d",
+                                "value": 10
+                            }
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "unit": "3.5",
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-06",
+                    "end": "2024-01-16"
+                }
+            }
+        },
+        {
+            "resourceType": "MedicationRequest",
+            "id": "lYDfbPK7Bj5frFerE-0Pg",
+            "intent": "order",
+            "status": "active",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "code": "outpatient",
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "display": "Ambulatorio"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "display": "Ibuprofeno 100 mg/5 mL",
+                "reference": "https://api-receta.minsal.cl/v2/Medication/1669211000167110"
+            },
+            "subject": {
+                "display": "Pedro Soto del Valle",
+                "reference": "https://api-receta.minsal.cl/v2/Patient/1115090713"
+            },
+            "authoredOn": "2024-01-06T17:31:00Z",
+            "requester": {
+                "display": "María Carmen",
+                "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Practitioner/2523"
+            },
+            "groupIdentifier": {
+                "value": "3_dcQQpQCRZDAOtbt39Hx"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "code": "acute",
+                        "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+                        "display": "Short course (acute) therapy"
+                    }
+                ]
+            },
+            "note": [
+                {
+                    "text": "En caso de fiebre"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "timing": {
+                        "repeat": {
+                            "period": 8,
+                            "frequency": 3,
+                            "periodUnit": "h",
+                            "boundsDuration": {
+                                "code": "d",
+                                "value": 5
+                            }
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "unit": "5",
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSUnidadAsistencial",
+                                "code": "mililitro"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-06",
+                    "end": "2024-04-06"
+                }
+            }
+        }
+    ],
+    "status": "active",
+    "intent": "order",
+    "groupIdentifier": {
+        "value": "3_dcQQpQCRZDAOtbt39Hx"
+    },
+    "subject": {
+        "display": "Pedro Soto del Valle",
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Patient/3892"
+    },
+    "authoredOn": "2024-01-06T17:31:00Z"
+}

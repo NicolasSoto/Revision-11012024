@@ -1,0 +1,104 @@
+{
+    "resourceType": "RequestGroup",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "id": "3729",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "status": "active",
+            "intent": "order",
+            "medicationReference": {
+                "reference": "Medication/3408",
+                "display": "Sildenafil 50 mg comprimido"
+            },
+            "subject": {
+                "reference": "Patient/3672"
+            },
+            "requester": {
+                "reference": "Practitioner/2523"
+            },
+            "groupIdentifier": {
+                "value": "qszw7dh07bpbz1sguoka"
+            },
+            "courseOfTherapyType": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionPatron",
+                        "code": "acute",
+                        "display": "Terapia a corto plazo (aguda)"
+                    }
+                ]
+            },
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "Administrar 1 comprimido cada 24 horas via oral por 3 meses",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 90,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "d"
+                            },
+                            "frequency": 1,
+                            "period": 24,
+                            "periodUnit": "h"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 1,
+                                "unit": "comprimido",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "comprimido"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-06",
+                    "end": "2024-04-06"
+                }
+            }
+        }
+    ],
+    "groupIdentifier": {
+        "value": "qszw7dh07bpbz1sguoka"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/3672"
+    },
+    "authoredOn": "2024-01-06T15:02:12.314Z"
+}

@@ -1,0 +1,26 @@
+{
+    "resourceType": "RequestGroup",
+    "id": "ejercicio2-hospitalArica",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "basedOn": [
+        {
+            "reference": "MedicationRequest/3776"
+        },
+        {
+            "reference": "MedicationRequest/3816"
+        }
+    ],
+    "groupIdentifier": {
+        "value": "umj46j6g09n9faf9xh39"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/3532"
+    },
+    "authoredOn": "2024-01-12T14:10:12.314Z"
+}

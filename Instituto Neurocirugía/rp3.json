@@ -1,0 +1,131 @@
+{
+    "resourceType": "RequestGroup",
+    "id": "RecetaClaudioRoman-4",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+        ]
+    },
+    "contained": [
+        //   Colocar aqui las prescripciones
+        {
+            "resourceType": "MedicationRequest",
+            "id": "Prespricion-3-Claudio",
+            "meta": {
+                "profile": [
+                    "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaPrescripcionCl"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/ProdComercial",
+                    "valueReference": {
+                        "reference": "Medication/1688171000167116",
+                        "display": "Fentermina 37,5 mg comprimido"
+                    }
+                }
+            ],
+            "status": "active",
+            "intent": "order",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSCodificacionCategoria",
+                            "code": "community", // Asumo que es para la casa
+                            "display": "community"
+                        }
+                    ]
+                }
+            ],
+            "medicationReference": {
+                "reference": "Medication/1688171000167116",
+                "display": "Fentermina 37,5 mg comprimido"
+            },
+            "subject": {
+                "reference": "Patient/Paciente-3-Claudio",
+                "display": "Juana Josefina Montes Soto Claudio"
+            },
+            "requester": {
+                "reference": "Practitioner/33333348-1"
+            },
+            "groupIdentifier": {
+                "value": "vUZuqRSqbFlz"
+            },
+            "note": [
+                {
+                    "text": "Administrar todos los días en ayuno"
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "sequence": 1,
+                    "text": "administrando 1 comprimido oral para tragar, cada 1 día durante 3 meses.",
+                    "timing": {
+                        "repeat": {
+                            "boundsDuration": {
+                                "value": 3,
+                                "system": "http://unitsofmeasure.org",
+                                "code": "mo"
+                            },
+                            "frequency": 1,
+                            "period": 1,
+                            "periodUnit": "d"
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 1,
+                                "unit": "comprimido",
+                                "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                                "code": "comprimido"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-12",
+                    "end": "2024-04-12"
+                },
+                "quantity": {
+                    "value": 90
+                }
+            }
+        }
+    ],
+    "basedOn": [
+        {
+            "reference": "#Prespricion-3-Claudio"
+        }
+    ],
+    "groupIdentifier": {
+        "value": "vUZuqRSqbFlz"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/Paciente-3-Claudio"
+    },
+    "authoredOn": "2024-12-01T14:14:49.314Z"
+}

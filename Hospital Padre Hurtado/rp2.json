@@ -1,0 +1,189 @@
+{
+    "resourceType": "RequestGroup",
+    "groupIdentifier": {
+        "value": "81ed44fc0ded43349a38e302b61d0739"
+    },
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "display": "Nicolas Soto Duran",
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/v2/Patient/3698"
+    },
+    "authoredOn": "2024-01-12T10:22:49.103Z",
+    "contained": [
+        {
+            "resourceType": "MedicationRequest",
+            "status": "active",
+            "intent": "order",
+            "subject": {
+                "display": "Nicolas Soto Duran",
+                "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/v2/Patient/3698"
+            },
+            "authoredOn": "2024-01-11T20:22:49.103Z",
+            "medicationReference": {
+                "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Medication/1665981000167113",
+                "display": "amoxicilina 500 mg/ 5 mL polvoamoxicilina 500 mg/ 5 mL polvo"
+            },
+            "requester": {
+                "display": "Maria Carmen De los angeles Del rio Gonzalez",
+                "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/v2/Practitioner/3951"
+            },
+            "groupIdentifier": {
+                "value": "81ed44fc0ded43349a38e302b61d0739"
+            },
+            "identifier": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion",
+                                "code": "Id_Local",
+                                "display": "Id_Local"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "text": "Tomar 3.5 mililitros cada 8 horas durante 10 dias",
+                    "patientInstruction": "Debe completar tratamiento",
+                    "sequence": 1,
+                    "timing": {
+                        "repeat": {
+                            "period": 8,
+                            "frequency": 1,
+                            "periodUnit": "h",
+                            "boundsDuration": {
+                                "code": "d",
+                                "value": 10,
+                                "system": "http://unitsofmeasure.org"
+                            }
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 1,
+                                "unit": "Mililitros",
+                                "code": "mililitro",
+                                "system": "http://recetaelectronica.minsal.cl/gi-fhir/CodeSystem/CSUnidadAsistencial"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-07",
+                    "end": "2024-01-17"
+                }
+            }
+        },
+        {
+            "resourceType": "MedicationRequest",
+            "status": "active",
+            "intent": "order",
+            "subject": {
+                "display": "David HPH Montero",
+                "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/v2/Patient/3698"
+            },
+            "authoredOn": "2024-01-11T20:22:49.103Z",
+            "medicationReference": {
+                "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Medication/1666361000167111",
+                "display": "Ibuprofeno 100 mg/5 mL suspensión oral"
+            },
+            "requester": {
+                "display": "Maria Carmen De los angeles Del rio Gonzalez",
+                "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/v2/Practitioner/3951"
+            },
+            "groupIdentifier": {
+                "value": "81ed44fc0ded43349a38e302b61d0739"
+            },
+            "identifier": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSTipoPrescripcion",
+                                "code": "Id_Local",
+                                "display": "Id_Local"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dosageInstruction": [
+                {
+                    "text": "Tomar 5 mililitros cada 8 horas durante 5 dias",
+                    "patientInstruction": "En caso de Fiebre",
+                    "sequence": 1,
+                    "timing": {
+                        "repeat": {
+                            "period": 8,
+                            "frequency": 5,
+                            "periodUnit": "h",
+                            "boundsDuration": {
+                                "code": "d",
+                                "value": 5,
+                                "system": "http://unitsofmeasure.org"
+                            }
+                        }
+                    },
+                    "route": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "26643006",
+                                "display": "vía Oral route (calificador)"
+                            }
+                        ]
+                    },
+                    "method": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "738995006",
+                                "display": "Tragar (método de administración)"
+                            }
+                        ]
+                    },
+                    "doseAndRate": [
+                        {
+                            "doseQuantity": {
+                                "value": 1,
+                                "unit": "Comprimido",
+                                "code": "comprimido",
+                                "system": "http://recetaelectronica.minsal.cl/gi-fhir/CodeSystem/CSUnidadAsistencial"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dispenseRequest": {
+                "validityPeriod": {
+                    "start": "2024-01-07",
+                    "end": "2024-01-12"
+                }
+            }
+        }
+    ]
+}

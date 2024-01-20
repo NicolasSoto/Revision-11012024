@@ -1,0 +1,43 @@
+{
+    "resourceType": "MedicationDispense",
+    "status": "completed",
+    "subject": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Patient/1115090713",
+        "display": "David Jose Montero Colina"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/MedicationRequest/J5Er9ICXL4Dyc-ZCgrYdW"
+        }
+    ],
+    "medicationReference": {
+        "reference": "https://ventas.intersystemschile.cl/fhir/r4/cl/Medication/2101571000167118",
+        "display": "viagra 50 mg comprimido recubierto (Pfizer) 8 comprimidos"
+    },
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSF",
+                        "code": "dispensador",
+                        "display": "Dispensador"
+                    }
+                ]
+            },
+            "actor": {
+                "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Practitioner/2524",
+                "display": "Químico Prueba Receta Electronica"
+            }
+        }
+    ],
+    "location": {
+        "reference": "http://ventas.intersystemschile.cl/fhir/r4/cl/Location/2526",
+        "display": "CRUZ VERDE- Local: 0304"
+    },
+    "whenHandedOver": "2024-01-06T14:22:27.900Z",
+    "quantity": {
+        "value": 12,
+        "system": "http://unitsofmeasure.org"
+    }
+}

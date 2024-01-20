@@ -1,0 +1,93 @@
+{
+    "resourceType": "MedicationDispense",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-08-17T14:16:46.924Z",
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/DispensacionMedicamentoCl"
+        ]
+    },
+    "status": "completed",
+    "medicationReference": {
+        "reference": "Medication/3542",
+        "display": "ibuprofeno 100 mg/5 mL suspensión oral"
+    },
+    "subject": {
+        "reference": "Patient/5921"
+    },
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSFuncionProfesionalDispensacion",
+                        "code": "Dispensador"
+                    }
+                ]
+            },
+            "actor": {
+                "reference": "Practitioner/2156"
+            }
+        }
+    ],
+    "location": {
+        "reference": "Location/FA0001",
+        "display": "Cruz Verde - Local: Quillota"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "MedicationRequest/6324"
+        }
+    ],
+    "quantity": {
+        "value": 1,
+        "system": "http://unitsofmeasure.org"
+    },
+    "whenHandedOver": "2022-08-20T15:27:32.349Z",
+    "dosageInstruction": [
+        {
+            "sequence": 1,
+            "text": "administrando 5 mililitros, oral para tragar, cada 8 horas durante 5 días.",
+            "timing": {
+                "repeat": {
+                    "boundsDuration": {
+                        "value": 5,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    },
+                    "frequency": 1,
+                    "period": 8,
+                    "periodUnit": "h"
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                        "code": "26643006",
+                        "display": "vía Oral route (calificador)"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                        "code": "738995006",
+                        "display": "Tragar (método de administración)"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 5,
+                        "unit": "mililitros",
+                        "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                        "code": "mililitro"
+                    }
+                }
+            ]
+        }
+    ]
+}

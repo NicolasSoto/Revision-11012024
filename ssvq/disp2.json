@@ -1,0 +1,90 @@
+{
+    "resourceType": "MedicationDispense",
+    "meta": {
+        "profile": [
+            "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/DispensacionMedicamentoCl"
+        ]
+    },
+    "status": "completed",
+    "medicationReference": {
+        "reference": "Medication/3550",
+        "display": "Ibuprofeno 100 mg/5 mL suspensión oral"
+    },
+    "subject": {
+        "reference": "Patient/3879"
+    },
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSFuncionProfesionalDispensacion",
+                        "code": "Dispensador"
+                    }
+                ]
+            },
+            "actor": {
+                "reference": "Practitioner/2524"
+            }
+        }
+    ],
+    "location": {
+        "reference": "Location/2526"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "MedicationRequest/3896"
+        }
+    ],
+    "quantity": {
+        "value": 3,
+        "system": "http://unitsofmeasure.org"
+    },
+    "whenHandedOver": "2022-08-20T15:27:32.349Z",
+    "dosageInstruction": [
+        {
+            "sequence": 1,
+            "text": "Administrar 1 Comprimido cada 1 día por 1 año",
+            "timing": {
+                "repeat": {
+                    "boundsDuration": {
+                        "value": 1,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "a"
+                    },
+                    "frequency": 1,
+                    "period": 1,
+                    "periodUnit": "d"
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSViasAdmin",
+                        "code": "26643006",
+                        "display": "vía Oral route (calificador)"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "https://interoperabilidad.minsal.cl/fhir/ig/snre/CodeSystem/CSMetodos",
+                        "code": "738995006",
+                        "display": "Tragar (método de administración)"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 1,
+                        "unit": "Comprimido",
+                        "system": "https://rme.hl7chile.cl/CodeSystem/CSUnidadAsistencial",
+                        "code": "comprimido"
+                    }
+                }
+            ]
+        }
+    ]
+}

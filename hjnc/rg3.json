@@ -1,0 +1,23 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "PrescripcionHospitalArica",
+  "meta": {
+    "profile": [
+      "https://interoperabilidad.minsal.cl/fhir/ig/snre/StructureDefinition/RecetaCl"
+    ]
+  },
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/3968"
+    }
+  ],
+  "groupIdentifier": {
+    "value": "jx79vc9mnjiijmhqjlie"
+  },
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/3558"
+  },
+  "authoredOn": "2024-01-12T14:10:12.314Z"
+}
